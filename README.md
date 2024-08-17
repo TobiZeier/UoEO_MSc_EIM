@@ -30,6 +30,7 @@ This module contains:
 * Unit 1: An Introduction to Security and Risk Management
 * Unit 2: Users, Assessments and the Risk Management Process
 * Unit 3: Introduction to Threat Modelling and Management
+  * [Formative Assignment: Collaborative Learning Discussion](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module2_Security_and_Risk_Management/Collaborative%20Learning%20Discussion.pdf)
 * Unit 4: Application of Threat Modelling and Management Techniques
 * Unit 5: An Introduction to Security and Risk Standards in Industry and the Enterprise
 * Unit 6: The Practical Implications of Security and Risk Standards
