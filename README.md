@@ -9,7 +9,7 @@ This module contains:
 * Unit 1: An Introduction to EIT
 * Unit 2: EIT vs. Shadow IT
 * Unit 3: EIT and Automation
-  * [Assignment 1: Collaborative Learning Question](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module1_Launching_into_Enterprise_IT_Management/Assignment1)
+  * [Assignment 1: Collaborative Learning Question](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module1_Launching_into_Enterprise_IT_Management/Assignment1/Assignment1.pdf)
 * Unit 4: A Comparative Study: Practical Automation Exercises using C and Python
 * Unit 5: Business Systems, Outsourcing and the Cloud
 * Unit 6: A Cost Comparison Between On-premise, Private and Public Cloud Hosting
