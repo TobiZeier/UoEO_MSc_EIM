@@ -9,15 +9,18 @@ This module contains:
 * Unit 1: An Introduction to EIT
 * Unit 2: EIT vs. Shadow IT
 * Unit 3: EIT and Automation
+  * [Assignment 1: Collaborative Learning Question](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module1_Launching_into_Enterprise_IT_Management/Assignment1)
 * Unit 4: A Comparative Study: Practical Automation Exercises using C and Python
 * Unit 5: Business Systems, Outsourcing and the Cloud
 * Unit 6: A Cost Comparison Between On-premise, Private and Public Cloud Hosting
 * Unit 7: Software Licensing: Commercial vs. Open Source
+  * [Assignment 2: Individual Programming Exercise](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module1_Launching_into_Enterprise_IT_Management/Assignment2)
 * Unit 8: A Case Study: Investigating Business and Technical Innovations of Large Corporations and SMEs
 * Unit 9: Communications and Digital Transformation
 * Unit 10: The Digital Transformation Process
 * Unit 11: Future Trends
 * Unit 12: The Great Debate
+  * [Assigmnemt 3: Individual Presentation](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module1_Launching_into_Enterprise_IT_Management/Assignment3)
 
 You can find all my work for this module in this folder: [Module 1](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module1_Launching_into_Enterprise_IT_Management)
 
