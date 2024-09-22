@@ -1,0 +1,13 @@
+CIA Component,Area,Risk,Mitigation
+Confidentiality,E-Commerce Platform,Data breaches exposing customer information.,"Implement SSL/TLS encryption, secure payment gateways, and strong access controls. Conduct regular security audits."
+Confidentiality,ERP System Upgrade,Unauthorized access to business-critical data during and after the system upgrade.,"Implement RBAC and MFA, and encrypt data during transfer and storage."
+Confidentiality,Cybersecurity Enhancement,Phishing attacks leading to compromised credentials.,"Conduct regular employee training, enforce MFA, and implement email filtering tools."
+Confidentiality,Automated Data Governance Tools,"Inadequate protection of sensitive customer and business data, leading to compliance failures.","Use encryption, data masking, and access controls to comply with regulations like GDPR."
+Integrity,E-Commerce Platform,"Tampering with customer orders or financial transactions, leading to data corruption or financial loss.","Implement data validation checks, transaction logging, and secure coding practices. Perform regular audits."
+Integrity,ERP System Upgrade,Data loss or corruption during migration from the old to the new ERP system.,Develop a detailed data migration plan with backups and integrity checks. Perform thorough testing before going live.
+Integrity,Cybersecurity Enhancement,Insider threats or cyberattacks altering or deleting critical data.,"Enforce strict access controls, regularly update and patch systems, and monitor for suspicious activity."
+Integrity,Automated Data Governance Tools,"Automated tools failing to maintain data accuracy, leading to decision-making errors.",Combine automated data integrity checks with manual oversight. Conduct regular audits.
+Availability,E-Commerce Platform,DDoS attacks could make the online platform unavailable to customers.,Deploy DDoS protection services and a CDN to ensure continuous availability.
+Availability,ERP System Upgrade,"System downtime during migration or after the upgrade, leading to operational disruptions.","Schedule the upgrade during off-peak hours, have a disaster recovery plan, and minimize downtime through testing."
+Availability,Cybersecurity Enhancement,Security measures like MFA causing account lockouts or delays in system access.,"Implement user-friendly MFA, provide training, and establish quick recovery procedures for locked accounts."
+Availability,Automated Data Governance Tools,"Over-reliance on automated tools leading to system failures, affecting data accessibility.",Implement redundant systems and regular testing. Include manual processes as backups.
