@@ -1,0 +1,6 @@
+Threat,Description,Mitigations
+Spoofing,"Improper security controls could lead to spoofed internal resources, potentially launching phishing campaigns against employees or customers.","Implement MFA, encrypt data, and enforce RBAC to protect against spoofing."
+Tampering,"Lack of complex identity management and encryption allows unauthorized users to modify data, leading to potential corruption or loss.","Use encryption, data masking, and strict access controls to prevent tampering and information disclosure."
+Information Disclosure,"Poor data governance could result in unauthorized access and exposure of sensitive data, risking non-compliance with regulations like GDPR.",Strengthen data integrity and governance to ensure compliance with regulations and protect against unauthorized access.
+Denial of Service (DoS),"Cyberattacks could disable POS and data management systems, causing operational downtime.","Deploy DDoS protection, establish system redundancy, and regularly patch systems to prevent DoS attacks."
+Elevation of Privilege (PrivEsc),Legacy systems with unpatched vulnerabilities increase the risk of attackers gaining elevated access and full control over critical systems.,"Enhance security controls, patch legacy systems, and enforce RBAC to mitigate elevation of privilege risks."
