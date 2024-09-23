@@ -34,6 +34,7 @@ This module contains:
 * Unit 4: Application of Threat Modelling and Management Techniques
 * Unit 5: An Introduction to Security and Risk Standards in Industry and the Enterprise
 * Unit 6: The Practical Implications of Security and Risk Standards
+  * [Assignment 1: Group Project](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module2_Security_and_Risk_Management/GroupAssignment)
 * Unit 7: An Introduction to the Concepts of Quantitative Risk Modelling
 * Unit 8: Implementing Quantitative Risk Models.
 * Unit 9: Risk, Business Continuity and Disaster Recovery
