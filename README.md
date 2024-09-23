@@ -37,6 +37,7 @@ This module contains:
 * Unit 7: An Introduction to the Concepts of Quantitative Risk Modelling
 * Unit 8: Implementing Quantitative Risk Models.
 * Unit 9: Risk, Business Continuity and Disaster Recovery
+  * [Formative Assignment: Collaborative Learning Discussion 2](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module2_Security_and_Risk_Management/Collaborative-Learning-Discussion2.pdf)
 * Unit 10: Practical Applications and Issues in DR Implementations
 * Unit 11: Future Trends in Security and Risk Management
 * Unit 12: The Great Debate: What will be the most influential trend in SRM in the next 5 years?
