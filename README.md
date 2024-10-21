@@ -43,11 +43,19 @@ This module contains:
 * Unit 11: Future Trends in Security and Risk Management
   * [Assignment 2: Individual Project](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module2_Security_and_Risk_Management/Assignment2)
 * Unit 12: The Great Debate: What will be the most influential trend in SRM in the next 5 years?
-  * [Assignment 3: Module Reflection](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module2_Security_and_Risk_Management/GroupAssignment)
+  * [Assignment 3: Module Reflection](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module2_Security_and_Risk_Management/TobiasZeierModuleReflection-211024.pdf)
 
 You can find all my work for this module in this folder: [Module 2](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module2_Security_and_Risk_Management)
 
-## Module 3
+## Module 3 - Information Technology Service Management
+* Unit 1: Introduction to Information Technology Service Management (ITSM)
+* Unit 2: Information Technology Service Management Principles and Processes
+* Unit 3: Information Technology Service Management Frameworks and Standards
+* Unit 4: Information Technology Process Automation and DevOps
+* Unit 5: Future Trends in Information Technology Service Management
+* Unit 6: Capstone and Project Presentations
+
+  
 
 
 
