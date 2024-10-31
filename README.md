@@ -55,7 +55,8 @@ You can find all my work for this module in this folder: [Module 2](https://gith
 * Unit 5: Future Trends in Information Technology Service Management
 * Unit 6: Capstone and Project Presentations
 
-  
+You can find all my work for this module in this folder: [Module 3](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module3_Information_Technology_Service_Management)
+
 
 
 
