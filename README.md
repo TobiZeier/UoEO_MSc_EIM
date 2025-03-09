@@ -55,7 +55,7 @@ You can find all my work for this module in this folder: [Module 2](https://gith
 * Unit 4: Information Technology Process Automation and DevOps
 * Unit 5: Future Trends in Information Technology Service Management
 * Unit 6: Capstone and Project Presentations
-  * [Assignment 2: Assignment 2: Implementation and Demonstration of Content Management Database (CMDB)](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module3_Information_Technology_Service_Management/Assignment2)
+  * [Assignment 2: Implementation and Demonstration of Content Management Database (CMDB)](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module3_Information_Technology_Service_Management/Assignment2)
 
 You can find all my work for this module in this folder: [Module 3](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module3_Information_Technology_Service_Management)
 
@@ -63,9 +63,11 @@ You can find all my work for this module in this folder: [Module 3](https://gith
 * Unit 1: Introduction to Enterprise IT Project Management
 * Unit 2: Requirements Gathering, Management and Analysis Techniques
 * Unit 3: Project Management Tasks and Techniques
+ * [Assignment 1: Group Report](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module4_IT_Project_Management/Group1Report-160225.pdf)
 * Unit 4: Project Management and Risk
 * Unit 5: Future Trends in IT Project Management
 * Unit 6: Debate: What is the Most Influential IT Trend That Will Affect IT Project Management in the Next Five Years?
+ * [Assignment 2: Individual Presentation and Reflection](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module4_IT_Project_Management/Assignment2)
 
 You can find all my work for this module in this folder: [Module 4](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module4_IT_Project_Management)
 
