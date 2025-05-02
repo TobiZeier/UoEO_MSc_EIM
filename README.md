@@ -72,6 +72,7 @@ You can find all my work for this module in this folder: [Module 3](https://gith
 You can find all my work for this module in this folder: [Module 4](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module4_IT_Project_Management)
 
 ## Module 5 - Into Data Science
-
+* Unit 1: Data Science - Overview
+* Unit 2: Enterprise Data Architecture
 
 
