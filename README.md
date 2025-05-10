@@ -71,7 +71,16 @@ You can find all my work for this module in this folder: [Module 3](https://gith
 
 You can find all my work for this module in this folder: [Module 4](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module4_IT_Project_Management)
 
+## Module 5 - Into Data Science
+* Unit 1: Data Science - Overview
+* Unit 2: Enterprise Data Architecture
+<<<<<<< HEAD
+* Unit 3: The Data Pipeline
+  * [Assignment 1: Summative Collaborative Discussion](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module5_Into_Data_Science/Unit1-3-ForumPost.pdf) 
 
 
+=======
+* Unit 3: 
+>>>>>>> 196312a9904bec9b051a893a361a5a035a5b54f7
 
 
