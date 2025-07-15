@@ -63,11 +63,11 @@ You can find all my work for this module in this folder: [Module 3](https://gith
 * Unit 1: Introduction to Enterprise IT Project Management
 * Unit 2: Requirements Gathering, Management and Analysis Techniques
 * Unit 3: Project Management Tasks and Techniques
- * [Assignment 1: Group Report](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module4_IT_Project_Management/Group1Report-160225.pdf)
+  * [Assignment 1: Group Report](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module4_IT_Project_Management/Group1Report-160225.pdf)
 * Unit 4: Project Management and Risk
 * Unit 5: Future Trends in IT Project Management
 * Unit 6: Debate: What is the Most Influential IT Trend That Will Affect IT Project Management in the Next Five Years?
- * [Assignment 2: Individual Presentation and Reflection](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module4_IT_Project_Management/Assignment2)
+  * [Assignment 2: Individual Presentation and Reflection](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module4_IT_Project_Management/Assignment2)
 
 You can find all my work for this module in this folder: [Module 4](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module4_IT_Project_Management)
 
@@ -75,18 +75,18 @@ You can find all my work for this module in this folder: [Module 4](https://gith
 * Unit 1: Data Science - Overview
 * Unit 2: Enterprise Data Architecture
 * Unit 3: The Data Pipeline
- * [Assignment 1: Summative Collaborative Discussion](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module5_Into_Data_Science/Unit1-3-ForumPost.pdf)
+  * [Assignment 1: Summative Collaborative Discussion](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module5_Into_Data_Science/Unit1-3-ForumPost.pdf)
 * Unit 4: Big Data – Lakes, Data Warehouse, Mining and Clouds
 * Unit 5: Data Analytics and Tools
 * Unit 6: Value of Data
-  *[Assignment 2: Enterprise Data Report](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module5_Into_Data_Science/TobiasZeierDataReport050625.pdf)
+  * [Assignment 2: Enterprise Data Report](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module5_Into_Data_Science/TobiasZeierDataReport050625.pdf)
 * Unit 7: IP Strategy
 * Unit 8: Digital Convergence and Transformation
 * Unit 9: Compliance, Governance, Ethics, and Regulatory Frameworks
 * Unit 10: Information Technology Infrastructure Library (ITLT) Services Strategy, Design, Transition, Operations, and Improvements
 * Unit 11: Business Intelligence
-  *[Assignment 3: Enterprise Data Executive Summary and Implementation Report](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module5_Into_Data_Science/TobiasZeierEnterpriseData140725.pdf)
+  * [Assignment 3: Enterprise Data Executive Summary and Implementation Report](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module5_Into_Data_Science/TobiasZeierEnterpriseData140725.pdf)
 * Unit 12: Enterprise Resource Planning
 
-
+You can find all my work for this module in this folder: [Module 5](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module5_Into_Data_Science)
 
