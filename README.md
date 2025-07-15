@@ -79,11 +79,13 @@ You can find all my work for this module in this folder: [Module 4](https://gith
 * Unit 4: Big Data – Lakes, Data Warehouse, Mining and Clouds
 * Unit 5: Data Analytics and Tools
 * Unit 6: Value of Data
+  *[Assignment 2: Enterprise Data Report](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module5_Into_Data_Science/TobiasZeierDataReport050625.pdf)
 * Unit 7: IP Strategy
 * Unit 8: Digital Convergence and Transformation
 * Unit 9: Compliance, Governance, Ethics, and Regulatory Frameworks
 * Unit 10: Information Technology Infrastructure Library (ITLT) Services Strategy, Design, Transition, Operations, and Improvements
 * Unit 11: Business Intelligence
+  *[Assignment 3: Enterprise Data Executive Summary and Implementation Report](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module5_Into_Data_Science/TobiasZeierEnterpriseData140725.pdf)
 * Unit 12: Enterprise Resource Planning
 
 
