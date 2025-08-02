@@ -90,3 +90,4 @@ You can find all my work for this module in this folder: [Module 4](https://gith
 
 You can find all my work for this module in this folder: [Module 5](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module5_Into_Data_Science)
 
+## Module 6 - Cloud Operations and Management
