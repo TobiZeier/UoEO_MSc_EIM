@@ -1,0 +1,223 @@
+=================================================
+Starting MicroStack Cloud Provisioning
+=================================================
+1. Creating or showing keypair for SSH access...
+  - Keypair 'lab-microstack-key' is ready. Private key is at lab-microstack-key.pem
+2. Setting up network and router...
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field                     | Value                                                                                                                                                   |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| admin_state_up            | UP                                                                                                                                                      |
+| availability_zone_hints   |                                                                                                                                                         |
+| availability_zones        |                                                                                                                                                         |
+| created_at                | 2025-08-18T17:55:17Z                                                                                                                                    |
+| description               |                                                                                                                                                         |
+| dns_domain                | None                                                                                                                                                    |
+| id                        | acb299c6-8fef-4919-9866-0d0cc9b0a034                                                                                                                    |
+| ipv4_address_scope        | None                                                                                                                                                    |
+| ipv6_address_scope        | None                                                                                                                                                    |
+| is_default                | False                                                                                                                                                   |
+| is_vlan_transparent       | None                                                                                                                                                    |
+| location                  | cloud='', project.domain_id=, project.domain_name='default', project.id='11b8199a7920417e8a63e68c85f9f773', project.name='admin', region_name='', zone= |
+| mtu                       | 1442                                                                                                                                                    |
+| name                      | private-network                                                                                                                                         |
+| port_security_enabled     | True                                                                                                                                                    |
+| project_id                | 11b8199a7920417e8a63e68c85f9f773                                                                                                                        |
+| provider:network_type     | geneve                                                                                                                                                  |
+| provider:physical_network | None                                                                                                                                                    |
+| provider:segmentation_id  | 38917                                                                                                                                                   |
+| qos_policy_id             | None                                                                                                                                                    |
+| revision_number           | 1                                                                                                                                                       |
+| router:external           | Internal                                                                                                                                                |
+| segments                  | None                                                                                                                                                    |
+| shared                    | False                                                                                                                                                   |
+| status                    | ACTIVE                                                                                                                                                  |
+| subnets                   |                                                                                                                                                         |
+| tags                      |                                                                                                                                                         |
+| updated_at                | 2025-08-18T17:55:17Z                                                                                                                                    |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+  - Private network 'private-network' is ready.
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field                | Value                                                                                                                                                   |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| allocation_pools     | 192.168.100.2-192.168.100.254                                                                                                                           |
+| cidr                 | 192.168.100.0/24                                                                                                                                        |
+| created_at           | 2025-08-18T17:55:21Z                                                                                                                                    |
+| description          |                                                                                                                                                         |
+| dns_nameservers      |                                                                                                                                                         |
+| dns_publish_fixed_ip | None                                                                                                                                                    |
+| enable_dhcp          | True                                                                                                                                                    |
+| gateway_ip           | 192.168.100.1                                                                                                                                           |
+| host_routes          |                                                                                                                                                         |
+| id                   | 35468ac8-6209-4e44-9607-a76c16b04a30                                                                                                                    |
+| ip_version           | 4                                                                                                                                                       |
+| ipv6_address_mode    | None                                                                                                                                                    |
+| ipv6_ra_mode         | None                                                                                                                                                    |
+| location             | cloud='', project.domain_id=, project.domain_name='default', project.id='11b8199a7920417e8a63e68c85f9f773', project.name='admin', region_name='', zone= |
+| name                 | private-subnet                                                                                                                                          |
+| network_id           | acb299c6-8fef-4919-9866-0d0cc9b0a034                                                                                                                    |
+| prefix_length        | None                                                                                                                                                    |
+| project_id           | 11b8199a7920417e8a63e68c85f9f773                                                                                                                        |
+| revision_number      | 0                                                                                                                                                       |
+| segment_id           | None                                                                                                                                                    |
+| service_types        |                                                                                                                                                         |
+| subnetpool_id        | None                                                                                                                                                    |
+| tags                 |                                                                                                                                                         |
+| updated_at           | 2025-08-18T17:55:21Z                                                                                                                                    |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+  - Private subnet 'private-subnet' is ready.
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field                   | Value                                                                                                                                                   |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| admin_state_up          | UP                                                                                                                                                      |
+| availability_zone_hints |                                                                                                                                                         |
+| availability_zones      |                                                                                                                                                         |
+| created_at              | 2025-08-18T17:55:25Z                                                                                                                                    |
+| description             |                                                                                                                                                         |
+| external_gateway_info   | null                                                                                                                                                    |
+| flavor_id               | None                                                                                                                                                    |
+| id                      | 08f135f0-7004-401f-b461-1332ebfdf70b                                                                                                                    |
+| location                | cloud='', project.domain_id=, project.domain_name='default', project.id='11b8199a7920417e8a63e68c85f9f773', project.name='admin', region_name='', zone= |
+| name                    | private-router                                                                                                                                          |
+| project_id              | 11b8199a7920417e8a63e68c85f9f773                                                                                                                        |
+| revision_number         | 1                                                                                                                                                       |
+| routes                  |                                                                                                                                                         |
+| status                  | ACTIVE                                                                                                                                                  |
+| tags                    |                                                                                                                                                         |
+| updated_at              | 2025-08-18T17:55:25Z                                                                                                                                    |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+  - Router 'private-router' is ready.
+  - Subnet 'private-subnet' added to router.
+  - Router connected to external network.
+3. Configuring security group rules...
++-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field           | Value                                                                                                                                                   |
++-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| created_at      | 2025-08-18T17:55:37Z                                                                                                                                    |
+| description     | lab-sec-group                                                                                                                                           |
+| id              | b1fe203f-7c7e-4ff1-b431-ebf20e70169e                                                                                                                    |
+| location        | cloud='', project.domain_id=, project.domain_name='default', project.id='11b8199a7920417e8a63e68c85f9f773', project.name='admin', region_name='', zone= |
+| name            | lab-sec-group                                                                                                                                           |
+| project_id      | 11b8199a7920417e8a63e68c85f9f773                                                                                                                        |
+| revision_number | 1                                                                                                                                                       |
+| rules           | created_at='2025-08-18T17:55:37Z', direction='egress', ethertype='IPv4', id='52e57768-798f-40a2-a766-3a8afc4bf04a', updated_at='2025-08-18T17:55:37Z'   |
+|                 | created_at='2025-08-18T17:55:37Z', direction='egress', ethertype='IPv6', id='d0c29df4-bbc0-400b-afbe-fc7b6fd1fd2f', updated_at='2025-08-18T17:55:37Z'   |
+| stateful        | True                                                                                                                                                    |
+| tags            | []                                                                                                                                                      |
+| updated_at      | 2025-08-18T17:55:37Z                                                                                                                                    |
++-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+  - Security group 'lab-sec-group' is ready.
++-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field             | Value                                                                                                                                                   |
++-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| created_at        | 2025-08-18T17:55:40Z                                                                                                                                    |
+| description       |                                                                                                                                                         |
+| direction         | ingress                                                                                                                                                 |
+| ether_type        | IPv4                                                                                                                                                    |
+| id                | b9eee7d7-1144-41eb-84e3-2fdbb6fb6c69                                                                                                                    |
+| location          | cloud='', project.domain_id=, project.domain_name='default', project.id='11b8199a7920417e8a63e68c85f9f773', project.name='admin', region_name='', zone= |
+| name              | None                                                                                                                                                    |
+| port_range_max    | None                                                                                                                                                    |
+| port_range_min    | None                                                                                                                                                    |
+| project_id        | 11b8199a7920417e8a63e68c85f9f773                                                                                                                        |
+| protocol          | tcp                                                                                                                                                     |
+| remote_group_id   | None                                                                                                                                                    |
+| remote_ip_prefix  | 0.0.0.0/0                                                                                                                                               |
+| revision_number   | 0                                                                                                                                                       |
+| security_group_id | b1fe203f-7c7e-4ff1-b431-ebf20e70169e                                                                                                                    |
+| tags              | []                                                                                                                                                      |
+| updated_at        | 2025-08-18T17:55:40Z                                                                                                                                    |
++-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field             | Value                                                                                                                                                   |
++-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| created_at        | 2025-08-18T17:55:42Z                                                                                                                                    |
+| description       |                                                                                                                                                         |
+| direction         | ingress                                                                                                                                                 |
+| ether_type        | IPv4                                                                                                                                                    |
+| id                | 3e6ed3ce-671f-48c3-8e63-464a50002dac                                                                                                                    |
+| location          | cloud='', project.domain_id=, project.domain_name='default', project.id='11b8199a7920417e8a63e68c85f9f773', project.name='admin', region_name='', zone= |
+| name              | None                                                                                                                                                    |
+| port_range_max    | None                                                                                                                                                    |
+| port_range_min    | None                                                                                                                                                    |
+| project_id        | 11b8199a7920417e8a63e68c85f9f773                                                                                                                        |
+| protocol          | icmp                                                                                                                                                    |
+| remote_group_id   | None                                                                                                                                                    |
+| remote_ip_prefix  | 0.0.0.0/0                                                                                                                                               |
+| revision_number   | 0                                                                                                                                                       |
+| security_group_id | b1fe203f-7c7e-4ff1-b431-ebf20e70169e                                                                                                                    |
+| tags              | []                                                                                                                                                      |
+| updated_at        | 2025-08-18T17:55:42Z                                                                                                                                    |
++-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+  - Added SSH and ICMP rules to the security group.
+4. Uploading cloud image if it doesn't exist...
++------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field            | Value                                                                                                                                                                                                    |
++------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| container_format | bare                                                                                                                                                                                                     |
+| created_at       | 2025-08-18T17:55:49Z                                                                                                                                                                                     |
+| disk_format      | qcow2                                                                                                                                                                                                    |
+| file             | /v2/images/531f812c-da6d-431f-927e-c266f99d0bfa/file                                                                                                                                                     |
+| id               | 531f812c-da6d-431f-927e-c266f99d0bfa                                                                                                                                                                     |
+| min_disk         | 0                                                                                                                                                                                                        |
+| min_ram          | 0                                                                                                                                                                                                        |
+| name             | Ubuntu-22.04                                                                                                                                                                                             |
+| owner            | 11b8199a7920417e8a63e68c85f9f773                                                                                                                                                                         |
+| properties       | os_hidden='False', owner_specified.openstack.md5='', owner_specified.openstack.object='images/Ubuntu-22.04', owner_specified.openstack.sha256='', self='/v2/images/531f812c-da6d-431f-927e-c266f99d0bfa' |
+| protected        | False                                                                                                                                                                                                    |
+| schema           | /v2/schemas/image                                                                                                                                                                                        |
+| status           | queued                                                                                                                                                                                                   |
+| tags             |                                                                                                                                                                                                          |
+| updated_at       | 2025-08-18T17:55:49Z                                                                                                                                                                                     |
+| visibility       | public                                                                                                                                                                                                   |
++------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+  - Image 'Ubuntu-22.04' uploaded successfully.
+5. Launching a new instance...
++-------------------------------------+-----------------------------------------------------+
+| Field                               | Value                                               |
++-------------------------------------+-----------------------------------------------------+
+| OS-DCF:diskConfig                   | MANUAL                                              |
+| OS-EXT-AZ:availability_zone         |                                                     |
+| OS-EXT-SRV-ATTR:host                | None                                                |
+| OS-EXT-SRV-ATTR:hypervisor_hostname | None                                                |
+| OS-EXT-SRV-ATTR:instance_name       |                                                     |
+| OS-EXT-STS:power_state              | NOSTATE                                             |
+| OS-EXT-STS:task_state               | scheduling                                          |
+| OS-EXT-STS:vm_state                 | building                                            |
+| OS-SRV-USG:launched_at              | None                                                |
+| OS-SRV-USG:terminated_at            | None                                                |
+| accessIPv4                          |                                                     |
+| accessIPv6                          |                                                     |
+| addresses                           |                                                     |
+| adminPass                           | bUuhJKtP2dqP                                        |
+| config_drive                        |                                                     |
+| created                             | 2025-08-18T17:58:26Z                                |
+| flavor                              | m1.small (2)                                        |
+| hostId                              |                                                     |
+| id                                  | b8a017fc-d218-4107-b71a-d3e99013ca18                |
+| image                               | Ubuntu-22.04 (531f812c-da6d-431f-927e-c266f99d0bfa) |
+| key_name                            | lab-microstack-key                                  |
+| name                                | lab-ubuntu-instance                                 |
+| progress                            | 0                                                   |
+| project_id                          | 11b8199a7920417e8a63e68c85f9f773                    |
+| properties                          |                                                     |
+| security_groups                     | name='b1fe203f-7c7e-4ff1-b431-ebf20e70169e'         |
+| status                              | BUILD                                               |
+| updated                             | 2025-08-18T17:58:25Z                                |
+| user_id                             | b0d72ae8c6e841768740d397415cae5c                    |
+| volumes_attached                    |                                                     |
++-------------------------------------+-----------------------------------------------------+
+  - Instance 'lab-ubuntu-instance' is being created...
+6. Waiting for instance 'lab-ubuntu-instance' to reach ACTIVE status...
+  - Current status: BUILD. Retrying in 5 seconds...
+  - Current status: BUILD. Retrying in 5 seconds...
+  - Current status: BUILD. Retrying in 5 seconds...
+  - Current status: BUILD. Retrying in 5 seconds...
+  - Instance is now active!
+7. Assigning a floating IP...
+  - Reusing existing floating IP: null
+  - Floating IP 'null' assigned to the instance.
+=================================================
+Provisioning complete! You can now SSH to your instance:
+ssh -i lab-microstack-key.pem ubuntu@null
+=================================================
