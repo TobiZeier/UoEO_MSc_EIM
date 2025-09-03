@@ -1,0 +1,18 @@
+😄  minikube v1.36.0 on Ubuntu 24.04 (vbox/amd64)
+    ▪ MINIKUBE_ACTIVE_DOCKERD=minikube
+✨  Using the docker driver based on existing profile
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.47 ...
+📌  Noticed you have an activated docker-env on docker driver in this terminal:
+🏃  Updating the running docker "minikube" container ...
+🐳  Preparing Kubernetes v1.33.1 on Docker 28.1.1 ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+configmap/app-config unchanged
+deployment.apps/lab-12f-deployment created
+service/lab-12f-app-service unchanged
+http://192.168.49.2:32687
+
+
