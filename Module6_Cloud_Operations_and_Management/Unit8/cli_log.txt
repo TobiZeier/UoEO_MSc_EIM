@@ -1,0 +1,113 @@
+lab@lab-VirtualBox:~/Downloads$ sudo duplicity full /var/snap/microstack/common/ file:///mnt/backups/microstack_data/
+Last full backup date: none
+GnuPG passphrase for decryption: 
+Retype passphrase for decryption to confirm: 
+--------------[ Backup Statistics ]--------------
+StartTime 1758294320.22 (Fri Sep 19 17:05:20 2025)
+EndTime 1758294470.00 (Fri Sep 19 17:07:50 2025)
+ElapsedTime 149.78 (2 minutes 29.78 seconds)
+SourceFiles 1158
+SourceFileSize 3584678677 (3.34 GB)
+NewFiles 1158
+NewFileSize 3584678677 (3.34 GB)
+DeletedFiles 0
+ChangedFiles 0
+ChangedFileSize 0 (0 bytes)
+ChangedDeltaSize 0 (0 bytes)
+DeltaEntries 1158
+RawDeltaSize 3583994586 (3.34 GB)
+TotalDestinationSizeChange 1442085685 (1.34 GB)
+Errors 0
+-------------------------------------------------
+
+lab@lab-VirtualBox:~/Downloads$ sudo snap stop microstack
+2025-09-19T17:09:15+02:00 INFO Waiting for "snap.microstack.cinder-scheduler.service" to stop.
+2025-09-19T17:09:34+02:00 INFO Waiting for "snap.microstack.cinder-uwsgi.service" to stop.
+2025-09-19T17:09:49+02:00 INFO Waiting for "snap.microstack.cluster-uwsgi.service" to stop.
+2025-09-19T17:09:54+02:00 INFO Waiting for "snap.microstack.glance-api.service" to stop.
+2025-09-19T17:09:58+02:00 INFO Waiting for "snap.microstack.horizon-uwsgi.service" to stop.
+2025-09-19T17:10:05+02:00 INFO Waiting for "snap.microstack.keystone-uwsgi.service" to stop.
+2025-09-19T17:10:15+02:00 INFO Waiting for "snap.microstack.mysqld.service" to stop.
+2025-09-19T17:10:23+02:00 INFO Waiting for "snap.microstack.neutron-api.service" to stop.
+2025-09-19T17:10:27+02:00 INFO Waiting for "snap.microstack.nova-api.service" to stop.
+2025-09-19T17:10:30+02:00 INFO Waiting for "snap.microstack.nova-api-metadata.service" to stop.
+2025-09-19T17:10:33+02:00 INFO Waiting for "snap.microstack.nova-compute.service" to stop.
+2025-09-19T17:10:47+02:00 INFO Waiting for "snap.microstack.ovs-vswitchd.service" to stop.
+2025-09-19T17:10:50+02:00 INFO Waiting for "snap.microstack.ovsdb-server.service" to stop.
+2025-09-19T17:10:52+02:00 INFO Waiting for "snap.microstack.placement-uwsgi.service" to stop.
+2025-09-19T17:10:57+02:00 INFO Waiting for "snap.microstack.rabbitmq-server.service" to stop.
+Stopped.
+lab@lab-VirtualBox:~/Downloads$ sudo rm -rf /var/snap/microstack/common/*
+lab@lab-VirtualBox:~/Downloads$ sudo snap stop microstack
+Stopped.
+lab@lab-VirtualBox:~/Downloads$ sudo duplicity restore file:///mnt/backups/microstack_data/ /var/snap/microstack/common/
+Local and Remote metadata are synchronized, no sync needed.
+Last full backup date: Fri Sep 19 17:05:07 2025
+GnuPG passphrase for decryption: 
+lab@lab-VirtualBox:~/Downloads$ sudo snap start microstack
+2025-09-19T17:13:44+02:00 INFO Waiting for "snap.microstack.ovsdb-server.service" to stop.
+2025-09-19T17:13:48+02:00 INFO Waiting for "snap.microstack.ovn-ovsdb-server-nb.service" to stop.
+2025-09-19T17:13:50+02:00 INFO Waiting for "snap.microstack.mysqld.service" to stop.
+2025-09-19T17:13:54+02:00 INFO Waiting for "snap.microstack.keystone-uwsgi.service" to stop.
+2025-09-19T17:14:08+02:00 INFO Waiting for "snap.microstack.horizon-uwsgi.service" to stop.
+2025-09-19T17:14:14+02:00 INFO Waiting for "snap.microstack.cluster-uwsgi.service" to stop.
+2025-09-19T17:14:19+02:00 INFO Waiting for "snap.microstack.cinder-uwsgi.service" to stop.
+2025-09-19T17:14:54+02:00 INFO Waiting for "snap.microstack.cinder-backup.service" to stop.
+error: cannot perform the following tasks:
+- Run service command "start" for services ["cinder-backup" "cinder-scheduler" "cinder-uwsgi" "cinder-volume" "cluster-uwsgi" "external-bridge" "filebeat" "glance-api" "horizon-uwsgi" "iscsid" "keystone-uwsgi" "libvirtd" "memcached" "mysqld" "neutron-api" "neutron-ovn-metadata-agent" "nginx" "nova-api" "nova-api-metadata" "nova-compute" "nova-conductor" "nova-scheduler" "nova-spicehtml5proxy" "nrpe" "ovn-controller" "ovn-northd" "ovn-ovsdb-server-nb" "ovn-ovsdb-server-sb" "ovs-vswitchd" "ovsdb-server" "placement-uwsgi" "rabbitmq-server" "setup-lvm-loopdev" "target" "telegraf" "virtlogd"] of snap "microstack" (systemctl command [start snap.microstack.setup-lvm-loopdev.service] failed with exit status 1: stderr:
+Warning: The unit file, source configuration file or drop-ins of snap.microstack.setup-lvm-loopdev.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+Job for snap.microstack.setup-lvm-loopdev.service failed because the control process exited with error code.
+See "systemctl status snap.microstack.setup-lvm-loopdev.service" and "journalctl -xeu snap.microstack.setup-lvm-loopdev.service" for details.)
+lab@lab-VirtualBox:~/Downloads$ sudo snap restart microstack
+Restarted.
+lab@lab-VirtualBox:~/Downloads$ sudo snap services microstack
+Service                                Startup   Current   Notes
+microstack.cinder-backup               disabled  inactive  -
+microstack.cinder-scheduler            enabled   inactive  -
+microstack.cinder-uwsgi                enabled   inactive  -
+microstack.cinder-volume               disabled  inactive  -
+microstack.cluster-uwsgi               enabled   inactive  -
+microstack.external-bridge             enabled   inactive  -
+microstack.filebeat                    disabled  inactive  -
+microstack.glance-api                  enabled   inactive  -
+microstack.horizon-uwsgi               enabled   inactive  -
+microstack.iscsid                      disabled  inactive  -
+microstack.keystone-uwsgi              enabled   inactive  -
+microstack.libvirtd                    enabled   inactive  -
+microstack.memcached                   enabled   inactive  -
+microstack.mysqld                      enabled   inactive  -
+microstack.neutron-api                 enabled   inactive  -
+microstack.neutron-ovn-metadata-agent  enabled   inactive  -
+microstack.nginx                       enabled   inactive  -
+microstack.nova-api                    enabled   inactive  -
+microstack.nova-api-metadata           enabled   inactive  -
+microstack.nova-compute                enabled   inactive  -
+microstack.nova-conductor              enabled   inactive  -
+microstack.nova-scheduler              enabled   inactive  -
+microstack.nova-spicehtml5proxy        enabled   inactive  -
+microstack.nrpe                        disabled  inactive  -
+microstack.ovn-controller              enabled   inactive  -
+microstack.ovn-northd                  enabled   inactive  -
+microstack.ovn-ovsdb-server-nb         enabled   inactive  -
+microstack.ovn-ovsdb-server-sb         enabled   inactive  -
+microstack.ovs-vswitchd                enabled   inactive  -
+microstack.ovsdb-server                enabled   inactive  -
+microstack.placement-uwsgi             enabled   inactive  -
+microstack.rabbitmq-server             enabled   inactive  -
+microstack.setup-lvm-loopdev           disabled  inactive  -
+microstack.target                      disabled  inactive  -
+microstack.telegraf                    disabled  inactive  -
+microstack.virtlogd                    enabled   inactive  -
+
+lab@lab-VirtualBox:~/Downloads$ ls -l /mnt/backups/microstack_data/
+total 1410040
+-rw-r--r-- 1 root root      7565 Sep 19 17:07 duplicity-full.20250919T150507Z.manifest.gpg
+-rw-r--r-- 1 root root 209782313 Sep 19 17:05 duplicity-full.20250919T150507Z.vol1.difftar.gpg
+-rw-r--r-- 1 root root 209739825 Sep 19 17:05 duplicity-full.20250919T150507Z.vol2.difftar.gpg
+-rw-r--r-- 1 root root 209736482 Sep 19 17:05 duplicity-full.20250919T150507Z.vol3.difftar.gpg
+-rw-r--r-- 1 root root 209733363 Sep 19 17:06 duplicity-full.20250919T150507Z.vol4.difftar.gpg
+-rw-r--r-- 1 root root 209760527 Sep 19 17:06 duplicity-full.20250919T150507Z.vol5.difftar.gpg
+-rw-r--r-- 1 root root 209696615 Sep 19 17:06 duplicity-full.20250919T150507Z.vol6.difftar.gpg
+-rw-r--r-- 1 root root 183636560 Sep 19 17:07 duplicity-full.20250919T150507Z.vol7.difftar.gpg
+-rw-r--r-- 1 root root   1755952 Sep 19 17:07 duplicity-full-signatures.20250919T150507Z.sigtar.gpg
+
