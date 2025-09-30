@@ -91,3 +91,18 @@ You can find all my work for this module in this folder: [Module 4](https://gith
 You can find all my work for this module in this folder: [Module 5](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module5_Into_Data_Science)
 
 ## Module 6 - Cloud Operations and Management
+* Unit 1: Introduction to Cloud Fundamentals and Services
+* Unit 2: Understanding Cloud Architecture and Implementing Different Frameworks
+* Unit 3: Cloud Design Tools
+* Unit 4: Cloud Native Technology Part 1
+* Unit 5: Cloud Native Technology Part 2
+* Unit 6: Hybrid Cloud Solutions (Hybrid, Fog, Edge Computing)
+  * [Group Assignment CSP](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module6_Cloud_Operations_and_Management/Unit6/GoupB-Assignment250908.pdf)
+* Unit 7: Cloud Security and Compliance
+* Unit 8: Disaster Recovery and Business Continuity
+* Unit 9: Cloud Migration and Integration Strategies
+* Unit 10: Advanced Cloud Technologies (Serverless Computing)
+* Unit 11: AI and Cloud Computing
+* Unit 12: Future Trends in Cloud Computing
+
+You can find all my work for this module in this folder: [Module 65](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module6_Cloud_Operations_and_Management)
