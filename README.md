@@ -103,6 +103,8 @@ You can find all my work for this module in this folder: [Module 5](https://gith
 * Unit 9: Cloud Migration and Integration Strategies
 * Unit 10: Advanced Cloud Technologies (Serverless Computing)
 * Unit 11: AI and Cloud Computing
+  * [Assignment 2: Cloud Strategy](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module6_Cloud_Operations_and_Management/Unit11-Assignment.pdf)
 * Unit 12: Future Trends in Cloud Computing
+  * [Group Assignment CSP](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module6_Cloud_Operations_and_Management/Unit12-Assignment.pdf)
 
-You can find all my work for this module in this folder: [Module 65](https://github.com/TobiZeier/UoEO_MSc_EIM/tree/main/Module6_Cloud_Operations_and_Management)
+You can find all my work for this module in this folder: [Module 6](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module6_Cloud_Operations_and_Management)
