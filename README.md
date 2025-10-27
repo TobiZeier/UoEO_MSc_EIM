@@ -108,3 +108,18 @@ You can find all my work for this module in this folder: [Module 5](https://gith
   * [Assignment 3: Module Reflection](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module6_Cloud_Operations_and_Management/Unit12-Assignment.pdf)
 
 You can find all my work for this module in this folder: [Module 6](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module6_Cloud_Operations_and_Management)
+
+## Module 7 - Research Methods and Professional Practice
+* Unit 1: Introduction to Research Methods — The Scientific Investigation and Ethics in Computing
+* Unit 2: Research Questions, the Literature Review and the Research Proposal
+* Unit 3: Methodology and Research Methods
+* Unit 4: Case Studies, Focus Groups and Observations
+* Unit 5: Interviews, Survey Methods, and Questionnaire Design 
+* Unit 6: Quantitative Methods — Descriptive and Inferential Statistics
+* Unit 7: Inferential Statistics and Hypothesis Testing  
+* Unit 8: Data Analysis and Visualisation
+* Unit 9: Validity and Generalisability in Research
+* Unit 10: Research Writing
+* Unit 11: Going Forward — Professional Development and Your e-Portfolio
+* Unit 12: Project Management and Managing Risk
+
