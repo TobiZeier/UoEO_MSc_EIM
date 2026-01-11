@@ -116,10 +116,12 @@ You can find all my work for this module in this folder: [Module 6](https://gith
 * Unit 4: Case Studies, Focus Groups and Observations
 * Unit 5: Interviews, Survey Methods, and Questionnaire Design 
 * Unit 6: Quantitative Methods — Descriptive and Inferential Statistics
-* Unit 7: Inferential Statistics and Hypothesis Testing  
+* Unit 7: Inferential Statistics and Hypothesis Testing 
+  * [Assignment 1: Literature Review](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module6_Cloud_Operations_and_Management/Unit11-Assignment.pdf)
 * Unit 8: Data Analysis and Visualisation
 * Unit 9: Validity and Generalisability in Research
 * Unit 10: Research Writing
+  * [Assignment 2: Research Proposal Presentation](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module6_Cloud_Operations_and_Management/Unit11-Assignment.pdf)
 * Unit 11: Going Forward — Professional Development and Your e-Portfolio
 * Unit 12: Project Management and Managing Risk
 
