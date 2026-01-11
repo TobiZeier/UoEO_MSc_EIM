@@ -117,7 +117,7 @@ You can find all my work for this module in this folder: [Module 6](https://gith
 * Unit 5: Interviews, Survey Methods, and Questionnaire Design 
 * Unit 6: Quantitative Methods — Descriptive and Inferential Statistics
 * Unit 7: Inferential Statistics and Hypothesis Testing 
-  * [Assignment 1: Literature Review](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module6_Cloud_Operations_and_Management/Unit11-Assignment.pdf)
+  * [Assignment 1: Literature Review](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module7_Research_Methods_and_Professional_Practice/TobiasZeierLiteraturReview081225.pdf)
 * Unit 8: Data Analysis and Visualisation
 * Unit 9: Validity and Generalisability in Research
 * Unit 10: Research Writing
