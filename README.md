@@ -121,7 +121,7 @@ You can find all my work for this module in this folder: [Module 6](https://gith
 * Unit 8: Data Analysis and Visualisation
 * Unit 9: Validity and Generalisability in Research
 * Unit 10: Research Writing
-  * [Assignment 2: Research Proposal Presentation](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module6_Cloud_Operations_and_Management/Unit11-Assignment.pdf)
+  * [Assignment 2: Research Proposal Presentation](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module7_Research_Methods_and_Professional_Practice/TobiasZeierPresentation120126.mp4)
 * Unit 11: Going Forward — Professional Development and Your e-Portfolio
 * Unit 12: Project Management and Managing Risk
 
