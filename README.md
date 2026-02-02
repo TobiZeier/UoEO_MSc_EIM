@@ -127,3 +127,14 @@ You can find all my work for this module in this folder: [Module 6](https://gith
   * [Assignment 3: Individual Reflection](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module7_Research_Methods_and_Professional_Practice/TobiasZeierIndividualReflection260126.pdf)
 
 You can find all my work for this module in this folder: [Module 7](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module7_Research_Methods_and_Professional_Practice)
+
+## Module 8 - MSc Computing Project
+* Unit 1: An Introduction to Your Dissertation
+* Unit 2: Project Planning and Risks
+* Unit 3: Project Types and Research Methods
+* Unit 4: Reviewing Literature
+* Unit 5: Research Ethics
+* Unit 6: Intellectual Property
+* Units 7-30: Dissertation
+
+You can find all my work for this module in this folder: [Module 8](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module8_MSc_Computing_Project)
