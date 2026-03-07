@@ -135,6 +135,7 @@ You can find all my work for this module in this folder: [Module 7](https://gith
 * Unit 4: Reviewing Literature
 * Unit 5: Research Ethics
 * Unit 6: Intellectual Property
+  * [Research Proposal](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module8_MSc_Computing_Project/ResearchProposal_TobiZeier070326.pdf)
 * Units 7-30: Dissertation
 
 You can find all my work for this module in this folder: [Module 8](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module8_MSc_Computing_Project)
