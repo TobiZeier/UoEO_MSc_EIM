@@ -1,6 +1,6 @@
-# M.Sc. Enterprise IT Management at University of Essex Online
+# MSc Enterprise IT Management at University of Essex Online
 
-This repository contains works from my studies in M.Sc. Enterprise IT Management at the University of Essex Online.
+This repository contains works from my studies in MSc Enterprise IT Management at the University of Essex Online.
 
 
 ## Module 1 - Launching into Enterprise IT Management
@@ -128,7 +128,7 @@ You can find all my work for this module in this folder: [Module 6](https://gith
 
 You can find all my work for this module in this folder: [Module 7](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module7_Research_Methods_and_Professional_Practice)
 
-## Module 8 - M.Sc. Computing Project
+## Module 8 - MSc Computing Project
 * Unit 1: An Introduction to Your Dissertation
 * Unit 2: Project Planning and Risks
 * Unit 3: Project Types and Research Methods
