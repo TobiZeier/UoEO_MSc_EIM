@@ -1,0 +1,27 @@
+---
+title: "Chapters"
+---
+
+# Introduction
+
+Start your thesis here.
+
+# Background
+
+Add background on technical debt and mission-critical trading systems.
+
+# Methodology
+
+Describe your service-level quantitative framework.
+
+# Results
+
+Present your measurements and findings.
+
+# Discussion
+
+Interpret results and implications.
+
+# Conclusion
+
+Summarise contributions and future work.

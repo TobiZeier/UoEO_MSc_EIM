@@ -1,0 +1,15 @@
+\thesistitle{$title$}
+\supervisor{$thesis.supervisor.name$}
+$if(thesis.co-supervisor.name)$
+\cosupervisor{$thesis.co-supervisor.name$}
+$else$
+\cosupervisor{}
+$endif$
+\degree{$thesis.degree-name$}
+\author{$book.author.name$}
+\university{$thesis.university$}
+\department{$thesis.department$}
+\group{$thesis.group$}
+\faculty{$thesis.faculty$}
+
+\setcounter{tocdepth}{$if(toc-depth)$$toc-depth$$else$3$endif$}

@@ -1,0 +1,158 @@
+%----------------------------------------------------------------------------------------
+% FRONT MATTER
+%----------------------------------------------------------------------------------------
+
+\frontmatter
+\pagestyle{plain}
+
+%----------------------------------------------------------------------------------------
+% TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{.03\textheight}
+{\scshape\large \univname\par}\vspace{0.8cm}
+\textsc{\normalsize \degreename\ Thesis}\\[0.4cm]
+
+\HRule\\[0.3cm]
+{\Large\bfseries \ttitle\par}\vspace{0.2cm}
+$if(book.subtitle)$
+{\large\bfseries $book.subtitle$\par}\vspace{0.2cm}
+$endif$
+\HRule\\[0.8cm]
+
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft}\normalsize
+\emph{Author:}\\
+\authorname
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright}\normalsize
+\emph{Supervisor:}\\
+\supname
+$if(thesis.co-supervisor.name)$
+\\[0.3cm]
+\emph{Co-Supervisor:}\\
+\cosupname
+$endif$
+\end{flushright}
+\end{minipage}\\[1.2cm]
+
+\vfill
+
+\small\textit{A thesis submitted in fulfilment of the requirements\\for the degree of \degreename}\\[0.2cm]
+\textit{in the}\\[0.2cm]
+\groupname\\
+\deptname\\[0.8cm]
+
+\vfill
+
+$if(thesis.logo)$
+$if(thesis.logo-height)$
+\includegraphics[height=$thesis.logo-height$]{$thesis.logo$}\\[0.4cm]
+$else$
+\includegraphics[width=0.28\textwidth]{$thesis.logo$}\\[0.4cm]
+$endif$
+$endif$
+
+{\normalsize $book.date$}
+
+\end{center}
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+% DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\chapter*{Declaration of Authorship}
+\addcontentsline{toc}{chapter}{Declaration of Authorship}
+
+\vspace*{\fill}
+
+\noindent I, \authorname, declare that this thesis titled \textit{\ttitle} and the work presented in it are my own. I confirm that:
+
+\begin{itemize}
+  \item This work was done wholly or mainly while in candidature for a research degree at this University.
+  \item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+  \item Where I have consulted the published work of others, this is always clearly attributed.
+  \item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+  \item I have acknowledged all main sources of help.
+\end{itemize}
+
+\vspace{2cm}
+\noindent Signed:\quad\rule[0.5em]{20em}{0.5pt}
+
+\vspace{0.5cm}
+\noindent Date:\quad\rule[0.5em]{20em}{0.5pt}
+
+\vspace*{\fill}
+
+%----------------------------------------------------------------------------------------
+% ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+$if(book.abstract)$
+\clearpage
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+$book.abstract$
+$endif$
+
+%----------------------------------------------------------------------------------------
+% ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+$if(thesis.acknowledgements)$
+\clearpage
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\input{"$thesis.acknowledgements$"}
+$endif$
+
+%----------------------------------------------------------------------------------------
+% TABLE OF CONTENTS / FIGURES / TABLES
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\begingroup
+\hypersetup{linkcolor=$if(toclinkcolor)$$toclinkcolor$$else$black$endif$}
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\endgroup
+
+%----------------------------------------------------------------------------------------
+% ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+$if(thesis.abbreviations)$
+\clearpage
+\chapter*{List of Abbreviations}
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+\input{"$thesis.abbreviations$"}
+$endif$
+
+%----------------------------------------------------------------------------------------
+% SYMBOLS
+%----------------------------------------------------------------------------------------
+
+$if(thesis.symbols)$
+\clearpage
+\chapter*{List of Symbols}
+\addcontentsline{toc}{chapter}{List of Symbols}
+\input{"$thesis.symbols$"}
+$endif$
+
+%----------------------------------------------------------------------------------------
+% THESIS CONTENT — CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\mainmatter
+\pagestyle{thesis}

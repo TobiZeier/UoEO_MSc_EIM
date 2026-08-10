@@ -1,0 +1,27 @@
+---
+author: "Tobias Zeier"
+date: "2026"
+
+---
+
+# Declaration {.unnumbered}
+
+I, **\[Your Full Name\]**, confirm that the work presented in this thesis is my own. Where information has been derived from other sources, I confirm that this has been indicated in the thesis.
+
+\vspace{2cm}
+
+**Signed:** \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**Date:** `22 Fabruary 2026`
+
+# Acknowledgements {.unnumbered}
+
+I would like to thank my supervisor, \[Supervisor Name\], for their invaluable guidance throughout this research. I also express my gratitude to the IT professionals who participated in the interviews and surveys, providing the empirical data that made this study possible.
+
+# Keywords {.unnumbered}
+
+Enterprise IT Management, Cloud Governance, Strategic Alignment, UK Financial Services, ITIL 4, COBIT 2019.
+
+# Preface {.unnumbered}
+
+This thesis is submitted in partial fulfillment of the requirements for the degree of Master of Science (MSc) in Enterprise IT Management at the University of \[Your University\].

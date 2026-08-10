@@ -1,0 +1,96 @@
+# Literature Review
+
+## Context of the Topic
+
+Technical debt has become one of the most widely discussed and least consistently managed challenges in software engineering and enterprise IT governance [@avgeriouTechnicalDebtManagement2024]. Originally coined by @cunninghamWyCashPortfolioManagement1993 as a metaphor for the long-term cost of short-term technical compromises, the concept has since expanded to encompass architectural, infrastructure, organisational, and process dimensions of complex IT systems [@kruchtenTechnicalDebtMetaphor2012]. Despite growing academic and practitioner interest, the dominant body of literature remains anchored at the source code level, relying on static analysis tools and code-level metrics that are poorly suited to enterprise environments where operational reliability depends on vendor platforms, legacy infrastructure, and tightly integrated service stacks rather than on internally developed software alone [@amanatidisEvaluatingAgreementTechnical2020].
+
+This literature review is motivated by a specific and underexplored gap at the intersection of three fields: technical debt management, multi-criteria decision-making, and mission-critical enterprise IT operations. Existing frameworks do not provide a quantitative, service-level mechanism for measuring and prioritising technical debt in environments such as trading IT, where the most consequential forms of debt are observable not in code repositories but in operational outcomes such as incident frequency, recovery time, patch lag, and change failure rate [@ramasubbuControllingTechnicalDebt2021]. The review therefore examines the state of knowledge across these three domains and synthesises a theoretical and methodological foundation for the proposed framework.
+
+## Perspective and Framework
+
+This review adopts a critical, problem-oriented perspective. Rather than providing an exhaustive catalogue of the technical debt literature, it is structured to build a coherent argument: that existing measurement and prioritisation approaches are inadequate for service-level, enterprise IT contexts, and that a quantitative framework applying TOPSIS to service management data represents a defensible and novel contribution. Each thematic section therefore not only summarises relevant findings but explicitly evaluates the assumptions, limitations, and gaps in the reviewed work, drawing on contradictory evidence where available to avoid uncritical acceptance of established positions [@lenarduzziSystematicLiteratureReview2021].
+
+The review is organised into four thematic areas, each corresponding to a pillar of the
+research design:
+
+1. **Conceptual foundations of technical debt** — origins, typologies, and theoretical critiques [@cunninghamWyCashPortfolioManagement1993; @kruchtenTechnicalDebtMetaphor2012; @avgeriouTechnicalDebtManagement2024]
+2. **Existing measurement and prioritisation frameworks** — tools, approaches, and their limitations [@amanatidisEvaluatingAgreementTechnical2020;
+   @alfayezHowSonarQubeidentifiedTechnical2023; @lenarduzziSystematicLiteratureReview2021]
+3. **Technical debt in financial and regulated enterprise IT** — domain-specific evidence and contextual constraints [@hakiDigitalNudgingTechnical2023; @ramasubbuControllingTechnicalDebt2021; @neilModelingOperationalRisk2009; @forsgrenAccelerate2018]
+4. **Multi-criteria decision-making and TOPSIS** — methodological grounding for the prioritisation component [@hwangMultipleAttributeDecision1981; @garcia-cascalesRankReversalTOPSIS2012; @albarakManagingTechnicalDebt2022]
+
+## Methodology for Literature Selection
+
+The literature search was conducted between January and March 2026 using a systematic, reproducible approach across multiple academic databases and grey literature sources. It draws upon scholarly articles sourced from four key academic databases: the University of Essex Online (UoEO) library, Scopus (Elsevier), IEEE Xplore, and Google Scholar.
+
+### Search Strings
+
+| Theme | Search String |
+|---|---|
+| TD foundations | `"technical debt" AND (metaphor OR taxonomy OR typology OR theory)` |
+| TD measurement & tools | `"technical debt" AND (measurement OR "static analysis" OR SonarQube OR metric OR "code smell")` |
+| TD prioritisation | `"technical debt" AND (priorit* OR "backlog management" OR remediation OR repayment)` |
+| TD in enterprise/financial IT | `"technical debt" AND ("enterprise" OR "financial services" OR "trading" OR "legacy system" OR "regulated")` |
+| TD automation & intelligent techniques | `"technical debt management" AND ("machine learning" OR "intelligent" OR automation OR NLP)` |
+| MCDM & TOPSIS | `TOPSIS AND ("multi-criteria" OR MCDM OR "decision making" OR priorit*)` |
+| TOPSIS & TD | `TOPSIS AND "technical debt"` |
+| Patch management | `"patch management" AND (priorit* OR risk OR vulnerability OR SLA OR enterprise)` |
+| DORA metrics & operational performance | `("DORA metrics" OR "mean time to restore" OR "change failure rate") AND ("technical debt" OR "software delivery" OR performance)` |
+| Operational risk in financial IT | `"operational risk" AND ("trading" OR "financial institution") AND (quantitative OR model OR framework)` |
+: Search terms used for literature review {#tbl-status tbl-colwidths="[30,70]"}
+
+### Inclusion Criteria
+
+- Peer-reviewed journal articles, conference proceedings, or empirical technical reports
+- Published between 2010 and 2026, with exceptions for foundational works
+  [@cunninghamWyCashPortfolioManagement1993; @hwangMultipleAttributeDecision1981]
+- Direct relevance to at least one of the four thematic areas listed above
+- Available in full text in English
+
+### Exclusion Criteria
+
+- Opinion pieces, editorials, and non-empirical practitioner blogs without academic grounding
+- Papers focused exclusively on agile process improvement without a measurable TD component
+- Domain-specific MCDM applications with no transferable methodological contribution
+- Duplicate studies superseded by a more comprehensive journal version by the same authors
+
+### Citation Snowballing
+
+Forward and backward citation tracking was applied to all identified anchor papers, specifically @cunninghamWyCashPortfolioManagement1993, @kruchtenTechnicalDebtMetaphor2012, @lenarduzziSystematicLiteratureReview2021, @forsgrenAccelerate2018, and @dissanayakeSoftwareSecurityPatch2022 to capture foundational works and recent citing literature not returned by keyword search alone. Approximately 140 candidate sources were identified in total; 60+ were retained as directly relevant following full-text screening against the criteria above.
+
+## Analytical Approach
+
+This review employs a narrative synthesis method involving explicit critical evaluation, as opposed to a formal systematic review protocol. This approach is justified on two primary grounds.
+
+Firstly, the research encompasses three distinct fields: software engineering, multi-criteria decision-making (MCDM), and enterprise IT operations. These disciplines utilise heterogeneous research methods, terminologies, and quality criteria that are not amenable to unified meta-analytic treatment. Secondly, the objective of the review is to construct a coherent theoretical and empirical argument in support of a novel design science artefact [@hevnerDesignScienceInformation2004]. For this purpose, narrative synthesis represents the methodologically appropriate approach.
+
+Within this framework, each thematic section applies three analytical moves consistently:
+
+- **Synthesis**: identifying convergent findings and established consensus positions across reviewed sources
+- **Critique**: surfacing contradictions, limitations, and assumptions that qualify or undermine those consensus positions
+- **Positioning**: explicitly relating identified gaps to the design decisions of the proposed framework, ensuring full traceability between the literature and the research artefact
+
+Where quantitative evidence is available, such as the inter-tool agreement statistics reported by @amanatidisEvaluatingAgreementTechnical2020, the 84% incident reduction reported by @detoledoReducingIncidentsMicroservices2021, or the DORA performance benchmarks established by @forsgrenAccelerate2018, it is used to anchor critical arguments in empirical data rather than assertion alone. In instances where contradictory findings exist, for example the divergence between tool-generated TD estimates and practitioner prioritisation behaviour documented by @alfayezHowSonarQubeidentifiedTechnical2023, both positions are represented and their implications for the proposed framework are discussed explicitly.
+
+## Conceptual Foundations of Technical Debt
+
+## Measurement and Prioritisation Frameworks
+
+## Technical Debt in Financial and Regulated Enterprise IT
+
+## Multi-Criteria Decision-Making and TOPSIS
+
+## Synthesis: Converging Evidence and the Research Gap
+
+## Synthesis: Converging Evidence and the Research Gap
+
+### Cross-Pillar Convergence
+
+### Cross-Cutting Limitations of the Reviewed Literature
+
+### Statement of the Research Gap
+
+### Transition to Research Questions
+
+
+## Conclusion

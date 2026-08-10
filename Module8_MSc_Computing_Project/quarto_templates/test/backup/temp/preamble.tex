@@ -1,0 +1,41 @@
+% Prevent babel option clash with MastersDoctoralThesis.cls
+\PassOptionsToPackage{english}{babel}
+
+% preamble.tex — LaTeX packages and thesis macros
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[sc]{mathpazo}
+\linespread{1.05}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Thesis macros are defined by MastersDoctoralThesis.cls
+% cosupervisor is not in the cls — define it manually
+\NewDocumentCommand{\cosupervisor}{m}{\newcommand{\cosupname}{#1}}
+
+% HRule is defined by MastersDoctoralThesis.cls
+% Chapter formatting handled by MastersDoctoralThesis.cls
+% cleardoublepage managed by MastersDoctoralThesis.cls
+% frontmatter/mainmatter/backmatter supported natively by MastersDoctoralThesis.cls
+
+% Section numbering
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% PDF metadata and link colours
+\AtBeginDocument{
+  \hypersetup{
+    pdftitle={\ttitle},
+    pdfauthor={\authorname},
+    allcolors=black,
+    urlcolor=blue
+  }
+}

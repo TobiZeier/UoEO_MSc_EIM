@@ -1,0 +1,115 @@
+% Custom title page template for Quarto book PDF
+
+% roman page numbering for front matter
+\pagenumbering{roman}
+\linespread{1.0}\selectfont
+
+\pagestyle{plain}
+
+%----------------------------------------------------------------------------------------
+% TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{0.5cm}
+{\scshape\LARGE $university$\par}\vspace{0.6cm}
+\textsc{\Large $degree$}\\[0.8cm]
+
+\HRule\\[0.3cm]
+{\huge\bfseries $title$\par}\vspace{0.3cm}
+$if(subtitle)$
+{\large\bfseries $subtitle$\par}\vspace{0.3cm}
+$endif$
+\HRule\\[0.8cm]
+
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft}\large
+\emph{Author:}\\
+$author$
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright}\large
+\emph{Supervisor:}\\
+$supervisor$
+$if(co-supervisor)$
+\\[0.4cm]
+\emph{Co-Supervisor:}\\
+$co-supervisor$
+$endif$
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+\textit{in the}\\[0.2cm]
+$department$\\[0.6cm]
+
+$if(logo)$
+\includegraphics[width=0.25\textwidth]{$logo$}\\[0.4cm]
+$endif$
+
+{\large $date$}
+
+\end{center}
+\end{titlepage}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+% DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+
+\chapter*{Declaration}
+\addcontentsline{toc}{chapter}{Declaration}
+
+\noindent I, Tobias Zeier, declare that this thesis titled, $title$ and the work presented in it are my own. I confirm that:
+
+\begin{itemize} 
+\item This work was done wholly or mainly while in candidature for a research degree at this University.
+\item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+\item Where I have consulted the published work of others, this is always clearly attributed.
+\item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+\item I have acknowledged all main sources of help.
+\item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
+\end{itemize}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+% ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+
+I would like to express my sincere gratitude to \textbf{Dr Zahid Ullah} for his guidance and support throughout this project, and to \textbf{Doug Millward} for his valuable feedback and co-supervision. I also thank the University of Essex Online for providing the resources and framework to conduct this research.
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+% LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\begingroup
+
+\tableofcontents % Prints the main table of contents
+
+\listoffigures % Prints the list of figures
+
+\listoftables % Prints the list of tables
+
+\endgroup
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+% THESIS CONTENT
+%----------------------------------------------------------------------------------------
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{plain}
+\linespread{1.5}\selectfont

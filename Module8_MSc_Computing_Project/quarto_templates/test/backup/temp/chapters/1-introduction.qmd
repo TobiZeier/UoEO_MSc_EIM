@@ -1,0 +1,38 @@
+# Introduction
+
+## Background and Motivation
+
+The increasing complexity of mission-critical trading systems has introduced significant challenges in maintaining software quality over time. Technical debt — the implied cost of rework caused by choosing expedient solutions over more robust approaches — has become a critical concern in financial technology environments where system reliability is paramount.
+
+## Problem Statement
+
+Despite widespread acknowledgement of technical debt as a key risk factor in enterprise IT, there remains a lack of standardised, quantitative frameworks for measuring and managing it specifically within mission-critical trading infrastructures. Current approaches are largely qualitative and inconsistent, making it difficult to prioritise remediation efforts effectively.
+
+## Research Aims and Objectives
+
+This thesis aims to develop a service-level quantitative framework for measuring technical debt in mission-critical trading systems. The specific objectives are:
+
+1. To review existing literature on technical debt measurement frameworks and service management practices
+2. To identify and validate a set of quantifiable technical debt indicators relevant to trading systems
+3. To design and apply a multi-criteria decision-making model (TOPSIS) for scoring and prioritising technical debt
+4. To evaluate the framework against real-world data from a mission-critical trading environment
+5. To assess the practical utility of the framework for IT managers and decision-makers
+
+## Research Questions
+
+The study is guided by the following primary research question:
+
+> *How can technical debt in mission-critical trading systems be measured quantitatively at the service level?*
+
+Secondary questions include:
+
+- Which indicators most reliably capture technical debt in trading infrastructure?
+- How can TOPSIS be applied to rank services by accumulated technical debt?
+- What thresholds distinguish acceptable from critical debt levels?
+
+## Significance of the Study
+
+This research contributes to both academic knowledge and industry practice by providing a reproducible, data-driven methodology that bridges IT service management and software quality engineering.
+
+## Thesis Structure
+[@ahmadTechnicalDebtNot2026]

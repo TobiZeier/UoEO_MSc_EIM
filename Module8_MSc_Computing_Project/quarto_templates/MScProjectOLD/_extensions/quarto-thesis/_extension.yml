@@ -1,0 +1,33 @@
+title: quarto-thesis
+author: Tobias Zeier
+version: 0.0.1
+contributes:
+  format:
+    pdf:
+      documentclass: MastersThesis
+      classoption: ["12pt", "english", "singlespacing", "headsepline"]
+      format-resources:
+        - MastersThesis.cls
+      template-partials: 
+        - "partials/title.tex"
+        - "partials/before-body.tex"
+      toc: false
+      toc-depth: 3
+      include-before-body: 
+        - partials/definitions.tex
+      include-in-header: 
+        - partials/in-header.tex
+      geometry: 
+        - paper=a4paper
+        - inner=2.5cm
+        - outer=3.8cm
+        - bindingoffset=.5cm
+        - top=1.5cm
+        - bottom=1.5cm
+      fontsize: 12pt
+      mainfont: "Times New Roman"
+      colorlinks: true
+      linestretch: 1.5
+      citecolor: magenta
+      linkcolor: blue
+      toclinkcolor: black

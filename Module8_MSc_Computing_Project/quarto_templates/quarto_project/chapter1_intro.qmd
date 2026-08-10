@@ -1,0 +1,25 @@
+---
+title: "Introduction"
+subtitle: "Strategic Alignment in Enterprise IT"
+author: "Tobias Zeier"
+date: last-modified
+number-sections: true
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+bibliography: references.bib
+---
+
+## Background
+
+The landscape of Enterprise IT has shifted toward cloud-native architectures [@vombrockeIntroductionDesignScience2020].
+
+## Problem Statement
+
+This is a test that has been done [@vilas-boasInnovativeProcessingTechnologies2022].
+
+Accordin gto @vilas-boasInnovativeProcessingTechnologies2022, they have found that...
+
+In another study where @vilas-boasInnovativeProcessingTechnologies2022 [p. 2] has said that...

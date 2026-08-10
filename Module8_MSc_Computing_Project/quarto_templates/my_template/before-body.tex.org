@@ -1,0 +1,69 @@
+% Custom title page template for Quarto book PDF
+\usepackage{mathpazo}
+
+\begin{titlepage}
+{\fontfamily{ppl}\selectfont   % ppl = Palatino
+
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+
+\begin{titlepage}
+\centering
+
+% University name at the very top
+{\scshape\large\textbf{{\Large U}NIVERSITY OF {\Large E}SSEX {\Large O}NLINE}}\\[1.5cm]
+
+% Degree type
+{\normalsize\textbf{{\large M}ASTER'S {\large T}HESIS}}\\[0.5cm]
+
+% Horizontal rule before title
+\noindent\rule{\textwidth}{0.8pt}\\[0.4cm]
+
+% Thesis title
+{\LARGE\bfseries $title$}\\[0.4cm]
+$if(subtitle)$
+{\large\bfseries $subtitle$}\\[0.5cm]
+$else$
+\vspace{0.5cm}
+$endif$
+
+% Horizontal rule after title
+\noindent\rule{\textwidth}{0.8pt}\\[1.5cm]
+
+% Author (left) and Supervisors (right) side by side
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+\normalsize
+\textit{Author}\\
+$author$
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\raggedleft
+\normalsize
+\textit{Supervisor}\\
+$supervisor$\\[0.3cm]
+\textit{Co-Supervisor}\\
+$co-supervisor$
+\end{minipage}
+
+\vfill
+
+% Department
+{\normalsize $department$}\\[2cm]
+
+% University logo
+$if(logo)$
+\includegraphics[width=0.22\textwidth]{$logo$}\\[0.7cm]
+$endif$
+
+% Date formatted as DD MMMM YYYY
+{\normalsize $date$}
+
+}
+\end{titlepage}
+
+% Switch to Times New Roman for the rest of the document
+\fontfamily{ptm}\selectfont
+\cleardoublepage

@@ -1,0 +1,54 @@
+project:
+  type: book
+  output-dir: .
+
+book:
+  title: "Measuring Technical Debt in Mission Critical Trading Systems"
+  subtitle: "A Service Level Quantitative Framework"
+  author: "Tobias Zeier"
+  date: "10 August 2026"
+  date-format: DD MMMM YYYY
+  chapters:
+    - index.qmd
+    - chapters/1-introduction.qmd
+    - chapters/2-literaturereview.qmd
+    - references.qmd
+  appendices: 
+    - appendices/appendixa.qmd
+
+university: "University of Essex Online"
+department: "Computing Department"
+degree: "Master's Thesis"
+supervisor: "Dr Zahid Ullah"
+co-supervisor: "Doug Millward"
+logo: "university-logo.png"
+
+bibliography: references.bib
+csl: harvard-cite-them-right-no-et-al.csl
+
+format:
+  pdf:
+    documentclass: report
+    papersize: a4
+    fontsize: 12pt
+    linestretch: 1.5
+    geometry:
+      - top=30mm
+      - left=30mm
+      - right=30mm
+      - bottom=30mm
+    template-partials:
+      - before-body.tex
+    include-in-header:
+      - preamble.tex
+    keep-tex: true
+    number-sections: true
+    toc: false
+    top-level-division: chapter
+
+lang: en-GB
+
+execute:
+  echo: false
+  warning: false
+  message: false

@@ -1,0 +1,607 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+  letterpaper,
+  11pt,
+  english,
+  onehalfspacing,
+  headsepline]{MastersDoctoralThesis}
+\usepackage{xcolor}
+\usepackage[paper=a4paper,inner=2.5cm,outer=3.8cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+%\usepackage[T1]{fontenc} % Output font encoding for international characters; causes problems for xelatex
+
+%\usepackage{mathpazo} % Use the Palatino font by default
+
+\usepackage[backend=bibtex, style=authoryear, natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+\NewDocumentCommand{\cosupervisor}{m}{\newcommand{\cosupname}{#1}}
+\providecommand{\keywordnames}{}
+
+
+%----------------------------------------------------------------------------------------
+%	MARGINS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	headheight=4ex,
+	includehead,
+	includefoot
+}
+
+\raggedbottom
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+
+}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Measuring Technical Debt in Mission Critical Trading Systems},
+  pdfauthor={Tobi Zeier},
+  colorlinks=true,
+  linkcolor={black},
+  filecolor={Maroon},
+  citecolor={black},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\thesistitle{Measuring Technical Debt in Mission Critical Trading
+Systems}
+\supervisor{Dr Zahid Ullah}
+\cosupervisor{Doug Millward}
+\degree{Master of Science}
+\author{Tobi Zeier}
+\university{University of Essex Online}
+\department{Computing Department}
+\group{MSc Enterprise IT Management}
+\faculty{Faculty of Science and Health}
+
+\setcounter{tocdepth}{2}
+\begin{document}
+%----------------------------------------------------------------------------------------
+% FRONT MATTER
+%----------------------------------------------------------------------------------------
+
+\frontmatter
+\pagestyle{plain}
+
+%----------------------------------------------------------------------------------------
+% TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{.03\textheight}
+{\scshape\large \univname\par}\vspace{0.8cm}
+\textsc{\normalsize \degreename\ Thesis}\\[0.4cm]
+
+\HRule\\[0.3cm]
+{\Large\bfseries \ttitle\par}\vspace{0.2cm}
+{\large\bfseries A Service Level Quantitative
+Framework\par}\vspace{0.2cm}
+\HRule\\[0.8cm]
+
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft}\normalsize
+\emph{Author:}\\
+\authorname
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright}\normalsize
+\emph{Supervisor:}\\
+\supname
+\\[0.3cm]
+\emph{Co-Supervisor:}\\
+\cosupname
+\end{flushright}
+\end{minipage}\\[1.2cm]
+
+\vfill
+
+\small\textit{A thesis submitted in fulfilment of the requirements\\for the degree of \degreename}\\[0.2cm]
+\textit{in the}\\[0.2cm]
+\groupname\\
+\deptname\\[0.8cm]
+
+\vfill
+
+\includegraphics[height=2.5cm]{images/logo.png}\\[0.4cm]
+
+{\normalsize 7 March 2026}
+
+\end{center}
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+% DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\chapter*{Declaration of Authorship}
+\addcontentsline{toc}{chapter}{Declaration of Authorship}
+
+\vspace*{\fill}
+
+\noindent I, \authorname, declare that this thesis titled \textit{\ttitle} and the work presented in it are my own. I confirm that:
+
+\begin{itemize}
+  \item This work was done wholly or mainly while in candidature for a research degree at this University.
+  \item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+  \item Where I have consulted the published work of others, this is always clearly attributed.
+  \item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+  \item I have acknowledged all main sources of help.
+\end{itemize}
+
+\vspace{2cm}
+\noindent Signed:\quad\rule[0.5em]{20em}{0.5pt}
+
+\vspace{0.5cm}
+\noindent Date:\quad\rule[0.5em]{20em}{0.5pt}
+
+\vspace*{\fill}
+
+%----------------------------------------------------------------------------------------
+% ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+This thesis develops a service-level quantitative framework for
+measuring technical debt in mission-critical trading systems. Using a
+multi-criteria decision-making approach based on TOPSIS, the framework
+evaluates services across five dimensions: code quality, infrastructure,
+architecture, documentation, and operations. The model is validated
+against empirical data from a Swiss securities trading environment,
+demonstrating clear discriminant validity and practical utility for IT
+governance.
+
+%----------------------------------------------------------------------------------------
+% ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\input{"Frontmatter/acknowledgements.tex"}
+
+%----------------------------------------------------------------------------------------
+% TABLE OF CONTENTS / FIGURES / TABLES
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\begingroup
+\hypersetup{linkcolor=black}
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\endgroup
+
+%----------------------------------------------------------------------------------------
+% ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\chapter*{List of Abbreviations}
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+\input{"Frontmatter/abbreviations.tex"}
+
+%----------------------------------------------------------------------------------------
+% SYMBOLS
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\chapter*{List of Symbols}
+\addcontentsline{toc}{chapter}{List of Symbols}
+\input{"Frontmatter/symbols.tex"}
+
+%----------------------------------------------------------------------------------------
+% THESIS CONTENT — CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\mainmatter
+\pagestyle{thesis}
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+
+\bookmarksetup{startatroot}
+
+\chapter{Introduction}\label{introduction}
+
+\section{Background and Motivation}\label{background-and-motivation}
+
+The increasing complexity of mission-critical trading systems has
+introduced significant challenges in maintaining software quality over
+time. Technical debt --- the implied cost of rework caused by choosing
+expedient solutions over more robust approaches --- has become a
+critical concern in financial technology environments where system
+reliability is paramount.
+
+\section{Problem Statement}\label{problem-statement}
+
+Despite widespread acknowledgement of technical debt as a key risk
+factor in enterprise IT, there remains a lack of standardised,
+quantitative frameworks for measuring and managing it specifically
+within mission-critical trading infrastructures. Current approaches are
+largely qualitative and inconsistent, making it difficult to prioritise
+remediation efforts effectively.
+
+\section{Research Aims and
+Objectives}\label{research-aims-and-objectives}
+
+This thesis aims to develop a service-level quantitative framework for
+measuring technical debt in mission-critical trading systems. The
+specific objectives are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  To review existing literature on technical debt measurement frameworks
+  and service management practices
+\item
+  To identify and validate a set of quantifiable technical debt
+  indicators relevant to trading systems
+\item
+  To design and apply a multi-criteria decision-making model (TOPSIS)
+  for scoring and prioritising technical debt
+\item
+  To evaluate the framework against real-world data from a
+  mission-critical trading environment
+\item
+  To assess the practical utility of the framework for IT managers and
+  decision-makers
+\end{enumerate}
+
+\section{Research Questions}\label{research-questions}
+
+The study is guided by the following primary research question:
+
+\begin{quote}
+\emph{How can technical debt in mission-critical trading systems be
+measured quantitatively at the service level?}
+\end{quote}
+
+Secondary questions include:
+
+\begin{itemize}
+\tightlist
+\item
+  Which indicators most reliably capture technical debt in trading
+  infrastructure?
+\item
+  How can TOPSIS be applied to rank services by accumulated technical
+  debt?
+\item
+  What thresholds distinguish acceptable from critical debt levels?
+\end{itemize}
+
+\section{Significance of the Study}\label{significance-of-the-study}
+
+This research contributes to both academic knowledge and industry
+practice by providing a reproducible, data-driven methodology that
+bridges IT service management and software quality engineering.
+
+\section{Thesis Structure}\label{thesis-structure}
+
+(Ahmad \emph{et al.}, 2026)
+
+\bookmarksetup{startatroot}
+
+\chapter{Introduction}\label{introduction-1}
+
+\section{Background and Motivation}\label{background-and-motivation-1}
+
+The increasing complexity of mission-critical trading systems has
+introduced significant challenges in maintaining software quality over
+time. Technical debt --- the implied cost of rework caused by choosing
+expedient solutions over more robust approaches --- has become a
+critical concern in financial technology environments where system
+reliability is paramount.
+
+\section{Problem Statement}\label{problem-statement-1}
+
+Despite widespread acknowledgement of technical debt as a key risk
+factor in enterprise IT, there remains a lack of standardised,
+quantitative frameworks for measuring and managing it specifically
+within mission-critical trading infrastructures. Current approaches are
+largely qualitative and inconsistent, making it difficult to prioritise
+remediation efforts effectively.
+
+\section{Research Aims and
+Objectives}\label{research-aims-and-objectives-1}
+
+This thesis aims to develop a service-level quantitative framework for
+measuring technical debt in mission-critical trading systems. The
+specific objectives are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  To review existing literature on technical debt measurement frameworks
+  and service management practices
+\item
+  To identify and validate a set of quantifiable technical debt
+  indicators relevant to trading systems
+\item
+  To design and apply a multi-criteria decision-making model (TOPSIS)
+  for scoring and prioritising technical debt
+\item
+  To evaluate the framework against real-world data from a
+  mission-critical trading environment
+\item
+  To assess the practical utility of the framework for IT managers and
+  decision-makers
+\end{enumerate}
+
+\section{Research Questions}\label{research-questions-1}
+
+The study is guided by the following primary research question:
+
+\begin{quote}
+\emph{How can technical debt in mission-critical trading systems be
+measured quantitatively at the service level?}
+\end{quote}
+
+Secondary questions include:
+
+\begin{itemize}
+\tightlist
+\item
+  Which indicators most reliably capture technical debt in trading
+  infrastructure?
+\item
+  How can TOPSIS be applied to rank services by accumulated technical
+  debt?
+\item
+  What thresholds distinguish acceptable from critical debt levels?
+\end{itemize}
+
+\section{Significance of the Study}\label{significance-of-the-study-1}
+
+This research contributes to both academic knowledge and industry
+practice by providing a reproducible, data-driven methodology that
+bridges IT service management and software quality engineering.
+
+\section{Thesis Structure}\label{thesis-structure-1}
+
+(Ahmad \emph{et al.}, 2026)
+
+\bookmarksetup{startatroot}
+
+\chapter{Data Collection}\label{data-collection}
+
+How did the student collect the data?
+
+\section{Data Bases}\label{data-bases}
+
+IEEExplore, Scopus, UoEO
+
+\bookmarksetup{startatroot}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{1}
+\bibitem[\citeproctext]{ref-ahmadTechnicalDebtNot2026}
+Ahmad, M.O., Mandić, V., Taušan, N., Katin, A. and Herath, P. (2026)
+\textquotesingle Technical debt is not just technical: {An} industrial
+case study in large agile software development\textquotesingle,
+\emph{Journal of Systems and Software}, 234, p. 112719. Available at:
+\url{https://doi.org/10.1016/j.jss.2025.112719}.
+
+\end{CSLReferences}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{part}{Appendices}
+\appendix
+
+\chapter{Appendix A}\label{appendix-a}
+
+Lorem ipsum
+
+
+
+
+\end{document}

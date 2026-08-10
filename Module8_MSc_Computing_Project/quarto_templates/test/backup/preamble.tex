@@ -1,0 +1,67 @@
+% preamble.tex — LaTeX packages and thesis macros
+
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[sc]{mathpazo}
+\linespread{1.05}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Neutralise book-class-only commands not available in report
+\newcommand{\frontmatter}{}
+\newcommand{\mainmatter}{}
+\newcommand{\backmatter}{}
+
+% Horizontal rule
+\newcommand{\HRule}{\rule{\linewidth}{0.2mm}}
+
+% Thesis info macros (set via title.tex)
+\newcommand{\ttitle}{}
+\newcommand{\supname}{}
+\newcommand{\cosupname}{}
+\newcommand{\degreename}{}
+\newcommand{\authorname}{}
+\newcommand{\univname}{}
+\newcommand{\deptname}{}
+\newcommand{\groupname}{}
+\newcommand{\facname}{}
+
+\newcommand{\thesistitle}[1]{\renewcommand{\ttitle}{#1}}
+\newcommand{\supervisor}[1]{\renewcommand{\supname}{#1}}
+\newcommand{\cosupervisor}[1]{\renewcommand{\cosupname}{#1}}
+\newcommand{\degree}[1]{\renewcommand{\degreename}{#1}}
+\renewcommand{\author}[1]{\renewcommand{\authorname}{#1}}
+\newcommand{\university}[1]{\renewcommand{\univname}{#1}}
+\newcommand{\department}[1]{\renewcommand{\deptname}{#1}}
+\newcommand{\group}[1]{\renewcommand{\groupname}{#1}}
+\newcommand{\faculty}[1]{\renewcommand{\facname}{#1}}
+
+% Section numbering
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Chapter heading style — numbered, no "Chapter X" label
+\usepackage{titlesec}
+\titleformat{\chapter}[block]{\normalfont\huge\bfseries}{\thechapter\quad}{0pt}{}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
+% Prevent blank pages between chapters
+\let\cleardoublepage\clearpage
+
+% PDF metadata and link colours
+\AtBeginDocument{
+  \hypersetup{
+    pdftitle={\ttitle},
+    pdfauthor={\authorname},
+    allcolors=black,
+    urlcolor=blue
+  }
+}

@@ -1,0 +1,19 @@
+\usepackage{scrlayer-scrpage}
+
+% Set font style and size for headers/footers
+\setkomafont{pageheadfoot}{\normalfont\normalcolor\footnotesize}
+\setkomafont{pagenumber}{\normalfont\normalcolor\footnotesize}
+
+% Clear default settings
+\clearpairofpagestyles
+
+% Define Header Content
+% \lehead = Left side, Even page | \rohead = Right side, Odd page
+\lehead[]{\pagemark}            % Page number on the left of even pages
+\rehead[]{\leftmark}            % Chapter title on the right of even pages
+\lohead[]{\rightmark}           % Section title on the left of odd pages
+\rohead[]{\pagemark}            % Page number on the right of odd pages
+
+% Define Footer Content (Optional: centered page numbers on chapter starts)
+\cefoot[\pagemark]{}           % Centered page mark on even "plain" pages
+\cofoot[\pagemark]{}           % Centered page mark on odd "plain" pages

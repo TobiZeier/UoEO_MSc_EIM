@@ -1,0 +1,43 @@
+---
+title: "Literature Review"
+subtitle: "Key Literature For This Project"
+author: "Tobias Zeier"
+date: last-modified
+number-sections: true
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+bibliography: references.bib
+---
+
+## Introduction to the Literature
+
+The purpose of this literature review is to evaluate the current state of Enterprise IT frameworks and their evolution in the context of cloud-native digital transformation.
+
+## The Evolution of IT Governance
+
+The shift from on-premise infrastructure to cloud-based services has fundamentally challenged traditional governance models. According to , legacy frameworks like COBIT 5 often lack the agility required for DevOps environments.
+
+### Strategic Alignment Models
+
+Strategic alignment remains a cornerstone of IT management. The Henderson-Venkatraman model continues to be relevant, though recent scholars argue it must be adapted for the "as-a-service" economy.
+
+#### Challenges in Hybrid Environments
+
+One of the most significant themes in recent literature is the "complexity gap" in hybrid cloud management.
+
+-   **Security Latency:** Managing identity across multiple providers.
+-   **Cost Opacity:** The transition from CapEx to OpEx models.
+-   **Skill Shortages:** The lack of certified enterprise architects in the UK market.
+
+## Theoretical Framework
+
+For the purpose of this thesis, I will adopt the **Resource-Based View (RBV)** of the firm. This framework suggests that IT is not just a utility, but a strategic asset that provides a competitive advantage.
+
+### Conceptual Model
+
+The relationship between governance and performance can be visualized in below:
+
+\`\`\`{mermaid} %%\| label: fig-lit-review-model %%\| fig-cap: "Conceptual Model of IT Governance Alignment" graph LR A\[Strategic Input\] --\> B(IT Governance Framework) B --\> C{Decision Rights} C --\> D\[Operational Performance\] C --\> E\[Strategic Value\]

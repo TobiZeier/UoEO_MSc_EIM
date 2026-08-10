@@ -1,0 +1,74 @@
+project:
+  type: book
+  output-dir: .
+
+book:
+  title: "Measuring Technical Debt in Mission Critical Trading Systems"
+  subtitle: "A Service Level Quantitative Framework"
+  date: "7 March 2026"
+  author: Tobias Zeier
+  abstract: "This thesis develops a service-level quantitative framework for measuring technical debt in mission-critical trading systems. Using a multi-criteria decision-making approach based on TOPSIS, the framework evaluates services across five dimensions: code quality, infrastructure, architecture, documentation, and operations. The model is validated against empirical data from a Swiss securities trading environment, demonstrating clear discriminant validity and practical utility for IT governance."
+  chapters:
+    - index.qmd
+    - chapters/1-introduction.qmd
+    - chapters/2-literaturereview.qmd
+    - references.qmd
+  
+  appendices: 
+    - appendices/appendixa.qmd
+
+thesis:
+  supervisor:
+    name: "Dr Zahid Ullah"
+  co-supervisor:
+    name: "Doug Millward"
+  degree-name: "Master of Science"
+  university: "University of Essex Online"
+  department: "Computing Department"
+  group: "Enterprise IT Management Programme"
+  declaration: "Frontmatter/declaration.tex"
+  acknowledgements: "Frontmatter/acknowledgements.tex"
+  abbreviations: "Frontmatter/abbreviations.tex"
+  symbols: "Frontmatter/symbols.tex"
+  logo: "images/logo.png"
+  logo-height: "2.5cm"
+
+bibliography: references.bib
+csl: harvard-cite-them-right-no-et-al.csl
+
+execute:
+  echo: false
+  warning: false
+  message: false
+
+toclinkcolor: black
+
+format:
+  pdf:
+    documentclass: report
+    classoption: ["11pt", "english", "onehalfspacing"]
+    fontsize: 11pt
+    geometry:
+      - paper=a4paper
+      - inner=2.5cm
+      - outer=3.8cm
+      - top=2cm
+      - bottom=2cm
+    template-partials:
+      - title.tex
+      - before-body.tex
+    include-before-body:
+      - definitions.tex
+    include-in-header:
+      - preamble.tex
+    keep-tex: true
+    toc: false
+    toc-depth: 3
+    number-sections: true
+    top-level-division: chapter
+    colorlinks: true
+    urlcolor: blue
+    linkcolor: black
+    citecolor: black
+
+lang: en-GB

@@ -1,0 +1,52 @@
+project:
+  type: book
+
+book:
+  title: "MSc Enterprise IT Management Thesis"
+  subtitle: "Clever subtitle probably with a pun"
+  author: 
+    - name: "Tobias Zeier"
+      orcid: "0000-0002-4677-535X"
+      affiliations:
+        - name: "University of Essex Online"
+          department: "Computer Science Department"
+  date: "22 February 2026"
+  date-format: "MMMM YYYY"
+  chapters:
+    - index.qmd
+    - chapter1_intro.qmd
+    - chapter2_lit_review.qmd
+    - references.qmd
+  output-file: "TobiasZeier_thesis.pdf"
+
+bibliography: reference.bib
+csl: harvard-cite-them-right-no-et-al.csl
+
+format:
+  pdf:
+    documentclass: scrreprt
+    papersize: a4
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    lof: true
+    lot: true
+    fontsize: 12pt
+    linestretch: 1.5
+    geometry:
+      - inner=3cm
+      - outer=4cm
+      - top=3cm
+      - bottom=4cm
+      - headsep=22pt
+      - headheight=11pt
+      - footskip=33pt
+      - heightrounded
+    #mainfont: "Times New Roman"
+    #sansfont: "Arial"
+    #monofont: "Courier New"
+    include-in-header:
+      - include-in-header.tex
+    template-partials:
+      - before-body.tex
+lang: en-GB

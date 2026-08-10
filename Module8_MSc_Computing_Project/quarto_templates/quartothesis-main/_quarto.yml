@@ -1,0 +1,24 @@
+project:
+  type: book
+  output-dir: docs
+  
+book:
+  title: "The title of my most excellent thesis"
+  author: "Jane Doe"
+  date: today
+  date-format: "MMMM YYYY"
+ 
+bibliography: references.bib
+
+execute:
+  echo: true # change to false to hide code
+
+
+profile:
+  group: 
+    - [html, pdf]
+
+editor: visual
+
+
+

@@ -1,0 +1,23 @@
+project:
+  type: book
+
+book:
+  title: "MSc Enterprise IT Management Thesis"
+  author: "Tobias Zeier"
+  date: "22 February 2026"
+  description: "A comprehensive study in the field of Enterprise IT"
+  chapters:
+    - index.qmd
+    - chapter1_intro.qmd
+    - chapter2_lit_review.qmd
+    - references.qmd
+
+bibliography: reference.bib
+csl: harvard-cite-them-right-no-et-al.csl
+
+format:
+  pdf:
+    documentclass: report
+    papersize: a4
+    toc: true               # Automatically generates Table of Contents
+    number-sections: true   # Auto-numbers 1, 1.1, 1.2

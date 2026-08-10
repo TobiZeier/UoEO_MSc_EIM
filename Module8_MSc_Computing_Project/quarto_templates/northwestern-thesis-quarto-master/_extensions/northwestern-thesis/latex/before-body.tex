@@ -1,0 +1,62 @@
+\doublespacing
+
+\newcommand{\formattitlespace}{0.6in}
+
+\begin{titlepage}\begin{center}\begin{singlespacing}
+\vspace{5\baselineskip}   
+$if(institute)$
+\MakeUppercase{$institute$}\\
+$endif$
+\vspace{\formattitlespace}
+
+$if(title)$
+$title$\\
+$endif$
+\vspace{\formattitlespace}
+
+$if(document-type)$
+A \MakeUppercase{$document-type$}\\
+\vspace{\formattitlespace}
+$endif$
+SUBMITTED TO THE GRADUATE SCHOOL\\
+IN PARTIAL FULFILLMENT OF THE REQUIREMENTS\\
+\vspace{\formattitlespace}
+for the degree\\
+\vspace{\formattitlespace}
+DOCTOR OF PHILOSOPHY\\
+\vspace{\formattitlespace}
+$if(field)$Field of $field$\\$endif$
+\vspace{\formattitlespace}
+By\\
+\vspace{1\baselineskip}
+$if(author)$$author$\\$endif$
+\vspace{\formattitlespace}
+EVANSTON, ILLINOIS\\
+\vspace{\formattitlespace}
+$if(date)$$date$\\$endif$
+\vspace{\formattitlespace}
+\vfill
+
+\end{singlespacing}\end{center}\end{titlepage}
+
+$if(abstract)$
+\clearpage
+\begin{centering}
+\textbf{ABSTRACT}\\
+\vspace{\baselineskip}
+\end{centering}
+\begin{doublespacing}
+$abstract$
+\end{doublespacing}
+$endif$
+
+
+\titleformat{\chapter}[display]
+{\normalfont\bfseries\filcenter}{}{0pt}{\MakeUppercase{#1}}  %spacing between titles
+
+\titlespacing*{\chapter}
+  {0pt}{0pt}{0pt}	%controls vertical margins on title
+  
+\titleformat{\section}{\normalfont\filcenter}{}{0em}{#1}
+\titleformat{\subsection}{\normalfont\itshape}{}{0em}{#1}
+\titleformat{\subsubsection}{\normalfont}{}{1em}{#1}

@@ -1,0 +1,31 @@
+% LaTeX preamble for thesis PDF
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[sc]{mathpazo}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\AtBeginDocument{\hypersetup{allcolors=black, urlcolor=blue}}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Define horizontal rule command for title page
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
+% Ensure top-level (chapter) headings are numbered
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Chapter heading: numbered but without "Chapter X" prefix label
+\usepackage{titlesec}
+\titleformat{\chapter}[block]{\normalfont\huge\bfseries}{\thechapter\quad}{0pt}{}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
+% Replace \cleardoublepage with \clearpage to prevent blank pages between chapters
+\let\cleardoublepage\clearpage

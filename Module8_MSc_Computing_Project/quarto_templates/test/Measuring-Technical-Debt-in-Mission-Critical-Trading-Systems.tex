@@ -1,0 +1,878 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+  letterpaper,
+  11pt,
+  oneside,
+  english,
+  onehalfspacing,
+  headsepline]{MastersDoctoralThesis}
+\usepackage{xcolor}
+\usepackage[paper=a4paper,inner=2.5cm,outer=3.8cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+% Prevent babel option clash with MastersDoctoralThesis.cls
+\PassOptionsToPackage{english}{babel}
+
+% preamble.tex — LaTeX packages and thesis macros
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[sc]{mathpazo}
+\linespread{1.05}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% cosupervisor is not defined in MastersDoctoralThesis.cls — define manually
+\NewDocumentCommand{\cosupervisor}{m}{\newcommand{\cosupname}{#1}}
+
+% keywordnames is only created when \keywords{} is called — provide safe fallback
+\providecommand{\keywordnames}{}
+
+% Section numbering depth
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Redefine chapter heading: "1  Title" on a single line, no "Chapter" prefix
+% Must use \makeatletter outside \AtBeginDocument to avoid hook expansion issues
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+  \vspace*{20pt}%
+  {\parindent 0pt \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \Huge\bfseries \thechapter \quad #1
+      \else
+        \Huge\bfseries #1
+      \fi
+    \else
+      \Huge\bfseries #1
+    \fi
+    \par\nobreak
+    \vspace*{40pt}%
+  }%
+  \thispagestyle{plain}%
+}
+\makeatother
+
+\AtBeginDocument{
+  % PDF metadata and link colours
+  \hypersetup{
+    pdftitle={\ttitle},
+    pdfauthor={\authorname},
+    allcolors=black,
+    urlcolor=blue
+  }
+
+  % Number headings from chapter level: 1 / 1.1 / 1.1.1 / 1.1.1.1
+  \renewcommand{\thechapter}{\arabic{chapter}}
+  \renewcommand{\thesection}{\thechapter.\arabic{section}}
+  \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+  \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Measuring Technical Debt in Mission Critical Trading Systems},
+  pdfauthor={Tobias Zeier},
+  colorlinks=true,
+  linkcolor={black},
+  filecolor={Maroon},
+  citecolor={black},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\thesistitle{Measuring Technical Debt in Mission Critical Trading
+Systems}
+\supervisor{Dr Zahid Ullah}
+\cosupervisor{Doug Millward}
+\degree{Master of Science}
+\author{Tobias Zeier}
+\university{University of Essex Online}
+\department{Computing Department}
+\group{Enterprise IT Management Programme}
+\faculty{}
+
+\setcounter{tocdepth}{1}
+\begin{document}
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{.06\textheight}
+{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
+\textsc{\Large \degreename\ Thesis}\\[0.5cm] % Thesis type
+
+\HRule \\[0.4cm] % Horizontal line
+{\huge \bfseries \ttitle\par}\vspace{0.2cm} % Thesis title
+{\large\bfseries A Service Level Quantitative
+Framework\par}\vspace{0.2cm} %Thesis subtitle
+\HRule \\[1.5cm] % Horizontal line
+ 
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+\authorname
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+%
+\supname\\[0.3cm]
+
+\emph{Co-Supervisor:}\\
+\cosupname
+\end{flushright}
+\end{minipage}\\[3cm]
+ 
+\vfill
+
+\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
+\textit{in the}\\[0.4cm]
+\groupname\\
+\deptname\\[1cm] % Research group name and department name
+ 
+\vfill
+
+\includegraphics[height=2.5cm]{images/logo.png} % University/department logo
+
+{\large 7 March 2026}\\[1cm] % Date
+
+ 
+\vfill
+\end{center}
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+\begin{declaration}
+\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
+\input{"Frontmatter/declaration.tex"}
+
+\end{declaration}
+
+\clearpage
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+This thesis develops a service-level quantitative framework for
+measuring technical debt in mission-critical trading systems. Using a
+multi-criteria decision-making approach based on TOPSIS, the framework
+evaluates services across five dimensions: code quality, infrastructure,
+architecture, documentation, and operations. The model is validated
+against empirical data from a Swiss securities trading environment,
+demonstrating clear discriminant validity and practical utility for IT
+governance.
+\end{abstract}
+
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{acknowledgements}
+\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+\input{"Frontmatter/acknowledgements.tex"}
+\end{acknowledgements}
+
+
+% 
+
+\begingroup
+\hypersetup{linkcolor=black}
+
+\tableofcontents % Prints the main table of contents
+
+\listoffigures % Prints the list of figures
+
+\listoftables % Prints the list of tables
+
+\endgroup
+
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\input{"Frontmatter/abbreviations.tex"}
+
+
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\input{"Frontmatter/symbols.tex"}
+
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+
+\bookmarksetup{startatroot}
+
+\chapter{Introduction}\label{introduction}
+
+tbd
+
+\section{Background and Motivation}\label{background-and-motivation}
+
+The increasing complexity of mission-critical trading systems has
+introduced significant challenges in maintaining software quality over
+time. Technical debt --- the implied cost of rework caused by choosing
+expedient solutions over more robust approaches --- has become a
+critical concern in financial technology environments where system
+reliability is paramount.
+
+\section{Problem Statement}\label{problem-statement}
+
+Despite widespread acknowledgement of technical debt as a key risk
+factor in enterprise IT, there remains a lack of standardised,
+quantitative frameworks for measuring and managing it specifically
+within mission-critical trading infrastructures. Current approaches are
+largely qualitative and inconsistent, making it difficult to prioritise
+remediation efforts effectively.
+
+\section{Research Aims and
+Objectives}\label{research-aims-and-objectives}
+
+This thesis aims to develop a service-level quantitative framework for
+measuring technical debt in mission-critical trading systems. The
+specific objectives are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  To review existing literature on technical debt measurement frameworks
+  and service management practices
+\item
+  To identify and validate a set of quantifiable technical debt
+  indicators relevant to trading systems
+\item
+  To design and apply a multi-criteria decision-making model (TOPSIS)
+  for scoring and prioritising technical debt
+\item
+  To evaluate the framework against real-world data from a
+  mission-critical trading environment
+\item
+  To assess the practical utility of the framework for IT managers and
+  decision-makers
+\end{enumerate}
+
+\section{Research Questions}\label{research-questions}
+
+The study is guided by the following primary research question:
+
+\begin{quote}
+\emph{How can technical debt in mission-critical trading systems be
+measured quantitatively at the service level?}
+\end{quote}
+
+Secondary questions include:
+
+\begin{itemize}
+\tightlist
+\item
+  Which indicators most reliably capture technical debt in trading
+  infrastructure?
+\item
+  How can TOPSIS be applied to rank services by accumulated technical
+  debt?
+\item
+  What thresholds distinguish acceptable from critical debt levels?
+\end{itemize}
+
+\section{Significance of the Study}\label{significance-of-the-study}
+
+This research contributes to both academic knowledge and industry
+practice by providing a reproducible, data-driven methodology that
+bridges IT service management and software quality engineering.
+
+\section{Thesis Structure}\label{thesis-structure}
+
+tbd
+
+\bookmarksetup{startatroot}
+
+\chapter{Literature Review}\label{literature-review}
+
+\section{Context of the Topic}\label{context-of-the-topic}
+
+Technical debt has become one of the most widely discussed and least
+consistently managed challenges in software engineering and enterprise
+IT governance (Avgeriou \emph{et al.}, 2024). Originally coined by
+Cunningham (1993) as a metaphor for the long-term cost of short-term
+technical compromises, the concept has since expanded to encompass
+architectural, infrastructure, organisational, and process dimensions of
+complex IT systems (Kruchten, Nord and Ozkaya, 2012). Despite growing
+academic and practitioner interest, the dominant body of literature
+remains anchored at the source code level, relying on static analysis
+tools and code-level metrics that are poorly suited to enterprise
+environments where operational reliability depends on vendor platforms,
+legacy infrastructure, and tightly integrated service stacks rather than
+on internally developed software alone (Amanatidis \emph{et al.}, 2020).
+
+This literature review is motivated by a specific and underexplored gap
+at the intersection of three fields: technical debt management,
+multi-criteria decision-making, and mission-critical enterprise IT
+operations. Existing frameworks do not provide a quantitative,
+service-level mechanism for measuring and prioritising technical debt in
+environments such as trading IT, where the most consequential forms of
+debt are observable not in code repositories but in operational outcomes
+such as incident frequency, recovery time, patch lag, and change failure
+rate (Ramasubbu and Kemerer, 2021). The review therefore examines the
+state of knowledge across these three domains and synthesises a
+theoretical and methodological foundation for the proposed framework.
+
+\section{Perspective and Framework}\label{perspective-and-framework}
+
+This review adopts a critical, problem-oriented perspective. Rather than
+providing an exhaustive catalogue of the technical debt literature, it
+is structured to build a coherent argument: that existing measurement
+and prioritisation approaches are inadequate for service-level,
+enterprise IT contexts, and that a quantitative framework applying
+TOPSIS to service management data represents a defensible and novel
+contribution. Each thematic section therefore not only summarises
+relevant findings but explicitly evaluates the assumptions, limitations,
+and gaps in the reviewed work, drawing on contradictory evidence where
+available to avoid uncritical acceptance of established positions
+(Lenarduzzi \emph{et al.}, 2021).
+
+The review is organised into four thematic areas, each corresponding to
+a pillar of the research design:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Conceptual foundations of technical debt} --- origins,
+  typologies, and theoretical critiques (Cunningham, 1993; Kruchten,
+  Nord and Ozkaya, 2012; Avgeriou \emph{et al.}, 2024)
+\item
+  \textbf{Existing measurement and prioritisation frameworks} --- tools,
+  approaches, and their limitations (Amanatidis \emph{et al.}, 2020;
+  Lenarduzzi \emph{et al.}, 2021; Alfayez \emph{et al.}, 2023)
+\item
+  \textbf{Technical debt in financial and regulated enterprise IT} ---
+  domain-specific evidence and contextual constraints (Neil, Häger and
+  Andersen, 2009; Forsgren, Humble and Kim, 2018; Ramasubbu and Kemerer,
+  2021; Haki \emph{et al.}, 2023)
+\item
+  \textbf{Multi-criteria decision-making and TOPSIS} --- methodological
+  grounding for the prioritisation component (Hwang and Yoon, 1981;
+  García-Cascales and Lamata, 2012; Albarak \emph{et al.}, 2022)
+\end{enumerate}
+
+\section{Methodology for Literature
+Selection}\label{methodology-for-literature-selection}
+
+The literature search was conducted between January and March 2026 using
+a systematic, reproducible approach across multiple academic databases
+and grey literature sources. It draws upon scholarly articles sourced
+from four key academic databases: the University of Essex Online (UoEO)
+library, Scopus (Elsevier), IEEE Xplore, and Google Scholar.
+
+\subsection{Search Strings}\label{search-strings}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.7000}}@{}}
+\caption{Search terms used for literature
+review}\label{tbl-status}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Theme
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Search String
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Theme
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Search String
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+TD foundations &
+\texttt{"technical\ debt"\ AND\ (metaphor\ OR\ taxonomy\ OR\ typology\ OR\ theory)} \\
+TD measurement \& tools &
+\texttt{"technical\ debt"\ AND\ (measurement\ OR\ "static\ analysis"\ OR\ SonarQube\ OR\ metric\ OR\ "code\ smell")} \\
+TD prioritisation &
+\texttt{"technical\ debt"\ AND\ (priorit*\ OR\ "backlog\ management"\ OR\ remediation\ OR\ repayment)} \\
+TD in enterprise/financial IT &
+\texttt{"technical\ debt"\ AND\ ("enterprise"\ OR\ "financial\ services"\ OR\ "trading"\ OR\ "legacy\ system"\ OR\ "regulated")} \\
+TD automation \& intelligent techniques &
+\texttt{"technical\ debt\ management"\ AND\ ("machine\ learning"\ OR\ "intelligent"\ OR\ automation\ OR\ NLP)} \\
+MCDM \& TOPSIS &
+\texttt{TOPSIS\ AND\ ("multi-criteria"\ OR\ MCDM\ OR\ "decision\ making"\ OR\ priorit*)} \\
+TOPSIS \& TD & \texttt{TOPSIS\ AND\ "technical\ debt"} \\
+Patch management &
+\texttt{"patch\ management"\ AND\ (priorit*\ OR\ risk\ OR\ vulnerability\ OR\ SLA\ OR\ enterprise)} \\
+DORA metrics \& operational performance &
+\texttt{("DORA\ metrics"\ OR\ "mean\ time\ to\ restore"\ OR\ "change\ failure\ rate")\ AND\ ("technical\ debt"\ OR\ "software\ delivery"\ OR\ performance)} \\
+Operational risk in financial IT &
+\texttt{"operational\ risk"\ AND\ ("trading"\ OR\ "financial\ institution")\ AND\ (quantitative\ OR\ model\ OR\ framework)} \\
+\end{longtable}
+
+\subsection{Inclusion Criteria}\label{inclusion-criteria}
+
+\begin{itemize}
+\tightlist
+\item
+  Peer-reviewed journal articles, conference proceedings, or empirical
+  technical reports
+\item
+  Published between 2010 and 2026, with exceptions for foundational
+  works (Hwang and Yoon, 1981; Cunningham, 1993)
+\item
+  Direct relevance to at least one of the four thematic areas listed
+  above
+\item
+  Available in full text in English
+\end{itemize}
+
+\subsection{Exclusion Criteria}\label{exclusion-criteria}
+
+\begin{itemize}
+\tightlist
+\item
+  Opinion pieces, editorials, and non-empirical practitioner blogs
+  without academic grounding
+\item
+  Papers focused exclusively on agile process improvement without a
+  measurable TD component
+\item
+  Domain-specific MCDM applications with no transferable methodological
+  contribution
+\item
+  Duplicate studies superseded by a more comprehensive journal version
+  by the same authors
+\end{itemize}
+
+\subsection{Citation Snowballing}\label{citation-snowballing}
+
+Forward and backward citation tracking was applied to all identified
+anchor papers, specifically Cunningham (1993), Kruchten, Nord and Ozkaya
+(2012), Lenarduzzi \emph{et al.} (2021), Forsgren, Humble and Kim
+(2018), and Dissanayake \emph{et al.} (2022) to capture foundational
+works and recent citing literature not returned by keyword search alone.
+Approximately 140 candidate sources were identified in total; 60+ were
+retained as directly relevant following full-text screening against the
+criteria above.
+
+\section{Analytical Approach}\label{analytical-approach}
+
+This review employs a narrative synthesis method involving explicit
+critical evaluation, as opposed to a formal systematic review protocol.
+This approach is justified on two primary grounds.
+
+Firstly, the research encompasses three distinct fields: software
+engineering, multi-criteria decision-making (MCDM), and enterprise IT
+operations. These disciplines utilise heterogeneous research methods,
+terminologies, and quality criteria that are not amenable to unified
+meta-analytic treatment. Secondly, the objective of the review is to
+construct a coherent theoretical and empirical argument in support of a
+novel design science artefact (Hevner \emph{et al.}, 2004). For this
+purpose, narrative synthesis represents the methodologically appropriate
+approach.
+
+Within this framework, each thematic section applies three analytical
+moves consistently:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Synthesis}: identifying convergent findings and established
+  consensus positions across reviewed sources
+\item
+  \textbf{Critique}: surfacing contradictions, limitations, and
+  assumptions that qualify or undermine those consensus positions
+\item
+  \textbf{Positioning}: explicitly relating identified gaps to the
+  design decisions of the proposed framework, ensuring full traceability
+  between the literature and the research artefact
+\end{itemize}
+
+Where quantitative evidence is available, such as the inter-tool
+agreement statistics reported by Amanatidis \emph{et al.} (2020), the
+84\% incident reduction reported by de Toledo \emph{et al.} (2021), or
+the DORA performance benchmarks established by Forsgren, Humble and Kim
+(2018), it is used to anchor critical arguments in empirical data rather
+than assertion alone. In instances where contradictory findings exist,
+for example the divergence between tool-generated TD estimates and
+practitioner prioritisation behaviour documented by Alfayez \emph{et
+al.} (2023), both positions are represented and their implications for
+the proposed framework are discussed explicitly.
+
+\section{Conceptual Foundations of Technical
+Debt}\label{conceptual-foundations-of-technical-debt}
+
+\section{Measurement and Prioritisation
+Frameworks}\label{measurement-and-prioritisation-frameworks}
+
+\section{Technical Debt in Financial and Regulated Enterprise
+IT}\label{technical-debt-in-financial-and-regulated-enterprise-it}
+
+\section{Multi-Criteria Decision-Making and
+TOPSIS}\label{multi-criteria-decision-making-and-topsis}
+
+\section{Synthesis: Converging Evidence and the Research
+Gap}\label{synthesis-converging-evidence-and-the-research-gap}
+
+\section{Strengths and Limitations of the Reviewed
+Literature}\label{strengths-and-limitations-of-the-reviewed-literature}
+
+\section{Conclusion}\label{conclusion}
+
+\bookmarksetup{startatroot}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{1}
+\bibitem[\citeproctext]{ref-albarakManagingTechnicalDebt2022}
+Albarak, M., Bahsoon, R., Ozkaya, I. and Nord, R. (2022)
+\textquotesingle Managing {Technical Debt} in {Database
+Normalization}\textquotesingle, \emph{IEEE Transactions on Software
+Engineering}, 48(3), pp. 755--772. Available at:
+\url{https://doi.org/10.1109/TSE.2020.3001339}.
+
+\bibitem[\citeproctext]{ref-alfayezHowSonarQubeidentifiedTechnical2023}
+Alfayez, R., Winn, R., Alwehaibi, W., Venson, E. and Boehm, B. (2023)
+\textquotesingle How {SonarQube-identified} technical debt is
+prioritized: {An} exploratory case study\textquotesingle,
+\emph{Information and Software Technology}, 156, p. 107147. Available
+at: \url{https://doi.org/10.1016/j.infsof.2023.107147}.
+
+\bibitem[\citeproctext]{ref-amanatidisEvaluatingAgreementTechnical2020}
+Amanatidis, T., Mittas, N., Moschou, A., Chatzigeorgiou, A.,
+Ampatzoglou, A. and Angelis, L. (2020) \textquotesingle Evaluating the
+agreement among technical debt measurement tools: Building an empirical
+benchmark of technical debt liabilities\textquotesingle, \emph{Empirical
+Software Engineering}, 25(5), pp. 4161--4204. Available at:
+\url{https://doi.org/10.1007/s10664-020-09869-w}.
+
+\bibitem[\citeproctext]{ref-avgeriouTechnicalDebtManagement2024}
+Avgeriou, P., Ozkaya, I., Chatzigeorgiou, A., Ciolkowski, M., Ernst,
+N.A., Koontz, R.J., Poort, E. and Shull, F. (2024)
+\textquotesingle Technical {Debt Management}: {The Road Ahead} for
+{Successful Software Delivery}\textquotesingle, \emph{arXiv.org}
+{[}Preprint{]}. Available at:
+\url{https://doi.org/10.1109/ICSE-FoSE59343.2023.00007}.
+
+\bibitem[\citeproctext]{ref-cunninghamWyCashPortfolioManagement1993}
+Cunningham, W. (1993) \textquotesingle The {WyCash} portfolio management
+system\textquotesingle, \emph{ACM SIGPLAN OOPS Messenger}, 4(2), pp.
+29--30. Available at: \url{https://doi.org/10.1145/157710.157715}.
+
+\bibitem[\citeproctext]{ref-detoledoReducingIncidentsMicroservices2021}
+de Toledo, S.S., Martini, A., Sjøberg, D.I.K., Przybyszewska, A. and
+Frandsen, J.S. (2021) \textquotesingle Reducing {Incidents} in
+{Microservices} by {Repaying Architectural Technical
+Debt}\textquotesingle, \emph{2021 47th {Euromicro Conference} on
+{Software Engineering} and {Advanced Applications} ({SEAA})}, pp.
+196--205. Available at:
+\url{https://doi.org/10.1109/SEAA53835.2021.00033}.
+
+\bibitem[\citeproctext]{ref-dissanayakeSoftwareSecurityPatch2022}
+Dissanayake, N., Jayatilaka, A., Zahedi, M. and Babar, M.A. (2022)
+\textquotesingle Software security patch management - {A} systematic
+literature review of challenges, approaches, tools and
+practices\textquotesingle, \emph{Information and Software Technology},
+144, p. 106771. Available at:
+\url{https://doi.org/10.1016/j.infsof.2021.106771}.
+
+\bibitem[\citeproctext]{ref-forsgrenAccelerate2018}
+Forsgren, N., Humble, J. and Kim, G. (2018) \emph{Accelerate: {The
+Science} of {Lean Software} and {DevOps}: {Building} and {Scaling High
+Performing Technology Organizations}}. Portland, OR: IT Revolution
+Press.
+
+\bibitem[\citeproctext]{ref-garcia-cascalesRankReversalTOPSIS2012}
+García-Cascales, M.S. and Lamata, M.T. (2012) \textquotesingle On rank
+reversal and {TOPSIS} method\textquotesingle, \emph{Mathematical and
+Computer Modelling}, 56(5), pp. 123--132. Available at:
+\url{https://doi.org/10.1016/j.mcm.2011.12.022}.
+
+\bibitem[\citeproctext]{ref-hakiDigitalNudgingTechnical2023}
+Haki, K., Rieder, A., Buchmann, L. and W.Schneider, A. (2023)
+\textquotesingle Digital nudging for technical debt management at
+{Credit Suisse}\textquotesingle, \emph{European Journal of Information
+Systems}, 32(1), pp. 64--80. Available at:
+\url{https://doi.org/10.1080/0960085X.2022.2088413}.
+
+\bibitem[\citeproctext]{ref-hevnerDesignScienceInformation2004}
+Hevner, A.R., March, S.T., Park, J. and Ram, S. (2004)
+\textquotesingle Design {Science} in {Information Systems
+Research}\textquotesingle, \emph{MIS Quarterly}, 28(1), pp. 75--105.
+Available at: \url{https://doi.org/10.2307/25148625}.
+
+\bibitem[\citeproctext]{ref-hwangMultipleAttributeDecision1981}
+Hwang, C.-L. and Yoon, K. (1981) \emph{Multiple {Attribute Decision
+Making}}. Edited by M. Beckmann and H.P. Künzi. Berlin, Heidelberg:
+Springer (Lecture {Notes} in {Economics} and {Mathematical Systems}).
+Available at: \url{https://doi.org/10.1007/978-3-642-48318-9}.
+
+\bibitem[\citeproctext]{ref-kruchtenTechnicalDebtMetaphor2012}
+Kruchten, P., Nord, R.L. and Ozkaya, I. (2012)
+\textquotesingle Technical {Debt}: {From Metaphor} to {Theory} and
+{Practice}\textquotesingle, \emph{IEEE Software}, 29(6), pp. 18--21.
+Available at: \url{https://doi.org/10.1109/MS.2012.167}.
+
+\bibitem[\citeproctext]{ref-lenarduzziSystematicLiteratureReview2021}
+Lenarduzzi, V., Besker, T., Taibi, D., Martini, A. and Arcelli Fontana,
+F. (2021) \textquotesingle A systematic literature review on {Technical
+Debt} prioritization: {Strategies}, processes, factors, and
+tools\textquotesingle, \emph{Journal of Systems and Software}, 171, p.
+110827. Available at: \url{https://doi.org/10.1016/j.jss.2020.110827}.
+
+\bibitem[\citeproctext]{ref-neilModelingOperationalRisk2009}
+Neil, M., Häger, D. and Andersen, L. (2009) \textquotesingle Modeling
+operational risk in financial institutions using hybrid dynamic
+{Bayesian} networks\textquotesingle, \emph{The Journal of Operational
+Risk}, 4(1), pp. 3--33. Available at:
+\url{https://doi.org/10.21314/JOP.2009.057}.
+
+\bibitem[\citeproctext]{ref-ramasubbuControllingTechnicalDebt2021}
+Ramasubbu, N. and Kemerer, C.F. (2021) \textquotesingle Controlling
+{Technical Debt Remediation} in {Outsourced Enterprise Systems
+Maintenance}: {An Empirical Analysis}\textquotesingle, \emph{Journal of
+Management Information Systems}, 38(1), pp. 4--28. Available at:
+\url{https://doi.org/10.1080/07421222.2021.1870377}.
+
+\end{CSLReferences}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{part}{Appendices}
+\appendix
+
+\chapter{Appendix A}\label{appendix-a}
+
+Lorem ipsum
+
+
+
+
+\end{document}

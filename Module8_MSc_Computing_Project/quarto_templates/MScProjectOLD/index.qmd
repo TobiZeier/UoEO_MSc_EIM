@@ -1,0 +1,6 @@
+{{< include chapters/1-introduction.qmd >}}
+{{< include chapters/2-literaturereview.qmd >}}
+{{< include chapters/3-methodology.qmd >}}
+{{< include chapters/4-tdframework.qmd >}}
+{{< include chapters/5-discussion.qmd >}}
+{{< include chapters/6-conclusion.qmd >}}

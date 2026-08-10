@@ -1,0 +1,1320 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  british,
+  12pt,
+  a4paper,
+]{report}
+\usepackage{xcolor}
+\usepackage[top=30mm,left=30mm,right=30mm,bottom=30mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{setspace}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage[english]{selnolig} % disable illegal ligatures
+\fi
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+% LaTeX preamble for thesis PDF
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[sc]{mathpazo}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\AtBeginDocument{\hypersetup{allcolors=black, urlcolor=blue}}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Define horizontal rule command for title page
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
+% Ensure top-level (chapter) headings are numbered
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Chapter heading: numbered but without "Chapter X" prefix label
+\usepackage{titlesec}
+\titleformat{\chapter}[block]{\normalfont\huge\bfseries}{\thechapter\quad}{0pt}{}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
+% Replace \cleardoublepage with \clearpage to prevent blank pages between chapters
+\let\cleardoublepage\clearpage
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Measuring Technical Debt in Mission Critical Trading Systems},
+  pdfauthor={Tobias Zeier},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Measuring Technical Debt in Mission Critical Trading Systems}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{A Service Level Quantitative Framework}
+\author{Tobias Zeier}
+\date{10 August 2026}
+\begin{document}
+% Custom title page template for Quarto book PDF
+
+% roman page numbering for front matter
+\pagenumbering{roman}
+\linespread{1.0}\selectfont
+
+\pagestyle{plain}
+
+%----------------------------------------------------------------------------------------
+% TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{0.5cm}
+{\scshape\LARGE University of Essex Online\par}\vspace{0.6cm}
+\textsc{\Large Master's Thesis}\\[0.8cm]
+
+\HRule\\[0.3cm]
+{\huge\bfseries Measuring Technical Debt in Mission Critical Trading
+Systems\par}\vspace{0.3cm}
+{\large\bfseries A Service Level Quantitative
+Framework\par}\vspace{0.3cm}
+\HRule\\[0.8cm]
+
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft}\large
+\emph{Author:}\\
+Tobias Zeier
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright}\large
+\emph{Supervisor:}\\
+Dr Zahid Ullah
+\\[0.4cm]
+\emph{Co-Supervisor:}\\
+Doug Millward
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+\textit{in the}\\[0.2cm]
+Computing Department\\[0.6cm]
+
+\includegraphics[width=0.25\textwidth]{university-logo.png}\\[0.4cm]
+
+{\large 10 August 2026}
+
+\end{center}
+\end{titlepage}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+% DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+
+\chapter*{Declaration}
+\addcontentsline{toc}{chapter}{Declaration}
+
+\noindent I, Tobias Zeier, declare that this thesis titled, Measuring
+Technical Debt in Mission Critical Trading
+Systems and the work presented in it are my own. I confirm that:
+
+\begin{itemize} 
+\item This work was done wholly or mainly while in candidature for a research degree at this University.
+\item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+\item Where I have consulted the published work of others, this is always clearly attributed.
+\item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+\item I have acknowledged all main sources of help.
+\item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
+\end{itemize}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+% ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+
+I would like to express my sincere gratitude to \textbf{Dr Zahid Ullah} for his guidance and support throughout this project, and to \textbf{Doug Millward} for his valuable feedback and co-supervision. I also thank the University of Essex Online for providing the resources and framework to conduct this research.
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+% LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\begingroup
+
+\tableofcontents % Prints the main table of contents
+
+\listoffigures % Prints the list of figures
+
+\listoftables % Prints the list of tables
+
+\endgroup
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+% THESIS CONTENT
+%----------------------------------------------------------------------------------------
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{plain}
+\linespread{1.5}\selectfont
+
+\setstretch{1.5}
+\bookmarksetup{startatroot}
+
+\chapter*{}\label{section}
+
+\markboth{}{}
+
+\bookmarksetup{startatroot}
+
+\chapter{Introduction}\label{introduction}
+
+\section{Background and Motivation}\label{background-and-motivation}
+
+The increasing complexity of mission-critical trading systems has
+introduced significant challenges in maintaining software quality over
+time. Technical debt --- the implied cost of rework caused by choosing
+expedient solutions over more robust approaches --- has become a
+critical concern in financial technology environments where system
+reliability is paramount.
+
+\section{Problem Statement}\label{problem-statement}
+
+Despite widespread acknowledgement of technical debt as a key risk
+factor in enterprise IT, there remains a lack of standardised,
+quantitative frameworks for measuring and managing it specifically
+within mission-critical trading infrastructures. Current approaches are
+largely qualitative and inconsistent, making it difficult to prioritise
+remediation efforts effectively.
+
+\section{Research Aims and
+Objectives}\label{research-aims-and-objectives}
+
+This thesis aims to develop a service-level quantitative framework for
+measuring technical debt in mission-critical trading systems. The
+specific objectives are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  To review existing literature on technical debt measurement frameworks
+  and service management practices
+\item
+  To identify and validate a set of quantifiable technical debt
+  indicators relevant to trading systems
+\item
+  To design and apply a multi-criteria decision-making model (TOPSIS)
+  for scoring and prioritising technical debt
+\item
+  To evaluate the framework against real-world data from a
+  mission-critical trading environment
+\item
+  To assess the practical utility of the framework for IT managers and
+  decision-makers
+\end{enumerate}
+
+\section{Research Questions}\label{research-questions}
+
+The study is guided by the following primary research question:
+
+\begin{quote}
+\emph{How can technical debt in mission-critical trading systems be
+measured quantitatively at the service level?}
+\end{quote}
+
+Secondary questions include:
+
+\begin{itemize}
+\tightlist
+\item
+  Which indicators most reliably capture technical debt in trading
+  infrastructure?
+\item
+  How can TOPSIS be applied to rank services by accumulated technical
+  debt?
+\item
+  What thresholds distinguish acceptable from critical debt levels?
+\end{itemize}
+
+\section{Significance of the Study}\label{significance-of-the-study}
+
+This research contributes to both academic knowledge and industry
+practice by providing a reproducible, data-driven methodology that
+bridges IT service management and software quality engineering.
+
+\section{Thesis Structure}\label{thesis-structure}
+
+(Ahmad \emph{et al.}, 2026)
+
+\bookmarksetup{startatroot}
+
+\chapter{Literature Review}\label{literature-review}
+
+\section{Context of the Topic}\label{context-of-the-topic}
+
+Technical debt has become one of the most consequential and least
+consistently managed challenges in enterprise IT governance (Avgeriou
+\emph{et al.}, 2024). Originally coined as a metaphor for the
+compounding cost of releasing code that is not quite right, the concept
+has since expanded far beyond its source code origins to encompass
+architectural, infrastructure, process, and organisational dimensions of
+complex IT systems (Kruchten, Nord and Ozkaya, 2012). Despite this
+broadened scope, the dominant measurement ecosystem remains anchored at
+the code level, relying on static analysis tools that are structurally
+unable to measure the forms of debt most consequential in regulated
+enterprise environments: unsupported infrastructure, unresolved security
+vulnerabilities, degraded operational reliability, and the accumulated
+consequences of vendor platform neglect. This structural mismatch is the
+problem this review addresses.
+
+The review is motivated by a specific gap at the intersection of three
+fields: technical debt management, multi-criteria decision-making, and
+mission-critical enterprise IT operations. No existing framework
+provides a quantitative, service-level mechanism for measuring and
+prioritising technical debt in environments such as trading IT, where
+the most consequential debt is observable not in code repositories but
+in operational outcomes including incident frequency, recovery time,
+patch lag, and change failure rate (Ramasubbu and Kemerer, 2021). This
+gap carries ethical as well as methodological dimensions. Any framework
+that assigns risk scores to IT services in a financial institution
+creates attribution effects: high-scoring services become organisational
+liabilities, with implications for team resourcing, investment
+decisions, and individual accountability that extend well beyond the
+technical. These ethical dimensions are addressed explicitly within each
+thematic section rather than deferred to a separate discussion.
+
+\section{Perspective and Framework}\label{perspective-and-framework}
+
+This review adopts a critical, problem-oriented perspective structured
+to build a coherent argument: that existing measurement and
+prioritisation approaches are inadequate for service-level enterprise IT
+contexts, and that a TOPSIS-based multi-criteria framework applied to
+service management data represents a defensible and novel contribution.
+The review is organised into four thematic areas corresponding to the
+four pillars of the research design: (1) the conceptual foundations of
+technical debt; (2) existing measurement and prioritisation frameworks
+and their limitations; (3) technical debt in financial and regulated
+enterprise IT; and (4) multi-criteria decision-making and TOPSIS.
+
+\section{Methodology for Literature
+Selection}\label{methodology-for-literature-selection}
+
+The literature search was conducted between January and March 2026 using
+Scopus, IEEE Xplore, Google Scholar, and the University of Essex Online
+library. Search strings were decomposed by thematic area as follows.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.7000}}@{}}
+\caption{Search terms used for literature
+review}\label{tbl-search}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Theme
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Search String
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Theme
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Search String
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+TD foundations &
+\texttt{"technical\ debt"\ AND\ (metaphor\ OR\ taxonomy\ OR\ typology\ OR\ theory)} \\
+TD measurement and tools &
+\texttt{"technical\ debt"\ AND\ (measurement\ OR\ "static\ analysis"\ OR\ SonarQube\ OR\ metric\ OR\ "code\ smell")} \\
+TD prioritisation &
+\texttt{"technical\ debt"\ AND\ (priorit*\ OR\ "backlog\ management"\ OR\ remediation\ OR\ repayment)} \\
+TD in enterprise and financial IT &
+\texttt{"technical\ debt"\ AND\ ("enterprise"\ OR\ "financial\ services"\ OR\ "trading"\ OR\ "legacy\ system"\ OR\ "regulated")} \\
+TD automation &
+\texttt{"technical\ debt\ management"\ AND\ ("machine\ learning"\ OR\ intelligent\ OR\ automation\ OR\ NLP)} \\
+MCDM and TOPSIS &
+\texttt{TOPSIS\ AND\ ("multi-criteria"\ OR\ MCDM\ OR\ "decision\ making"\ OR\ priorit*)} \\
+Patch management &
+\texttt{"patch\ management"\ AND\ (priorit*\ OR\ risk\ OR\ vulnerability\ OR\ SLA\ OR\ enterprise)} \\
+Operational risk and DORA &
+\texttt{("DORA\ metrics"\ OR\ "mean\ time\ to\ restore")\ AND\ ("technical\ debt"\ OR\ "software\ delivery")} \\
+\end{longtable}
+
+Sources were included if they were peer-reviewed articles, conference
+proceedings, or empirical technical reports published between 2010 and
+2026, with exceptions for foundational works (Hwang and Yoon, 1981;
+Cunningham, 1993), directly relevant to at least one thematic pillar,
+and available in full text in English. Excluded were opinion pieces
+without empirical grounding, studies focused exclusively on agile
+process improvement without a measurable technical debt component, and
+duplicate studies superseded by a more comprehensive journal version.
+Forward and backward citation snowballing was applied to the anchor
+papers of Kruchten, Nord and Ozkaya (2012), Lenarduzzi \emph{et al.}
+(2021), Forsgren, Humble and Kim (2018), and
+(\textbf{ramasubbuTechnicalDebtReliability2015?}). Approximately 140
+candidate sources were identified; more than 60 were retained following
+full-text screening.
+
+\section{Analytical Approach}\label{analytical-approach}
+
+This review employs narrative synthesis rather than a formal systematic
+review protocol, justified on two grounds. First, the research spans
+three disciplines with heterogeneous methods and terminologies not
+amenable to unified meta-analysis. Second, the objective is to construct
+a theoretical and empirical argument in support of a novel design
+science artefact (Hevner \emph{et al.}, 2004), for which narrative
+synthesis is the methodologically appropriate instrument. Each thematic
+section applies three analytical moves: synthesis, which identifies
+convergent findings; critique, which surfaces limitations,
+contradictions, and ethical tensions; and positioning, which traces
+identified gaps directly to design decisions of the proposed framework.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Conceptual Foundations of Technical
+Debt}\label{conceptual-foundations-of-technical-debt}
+
+\subsection{Origins and the Metaphor}\label{origins-and-the-metaphor}
+
+The technical debt metaphor was introduced by Ward Cunningham in 1993,
+characterising the release of not-quite-right code as analogous to
+financial debt: short-term velocity is gained, but every subsequent
+maintenance minute spent on that code constitutes interest, and if the
+debt is not repaid it accumulates until the system becomes
+unmaintainable (Haki \emph{et al.}, 2023). Kruchten, Nord and Ozkaya
+(2012) gave the metaphor its most influential formal treatment,
+proposing a two-dimensional model separating the deliberateness of debt
+(deliberate versus inadvertent) from its visibility (visible versus
+invisible), and populating a typology that includes code, design,
+architectural, test, build, and documentation debt. This taxonomy
+established that technical debt is not synonymous with poor coding
+practice but is a governance phenomenon encompassing intentional
+trade-offs under resource constraints as well as unrecognised systemic
+degradation.
+
+\subsection{Theoretical Development}\label{theoretical-development}
+
+Subsequent empirical work confirmed and extended this framing. Besker
+(2020) demonstrated across multiple industrial studies that software
+developers waste approximately 23\% of their working time due to the
+effects of existing technical debt, and that architectural debt exerts
+the greatest negative influence on development productivity across all
+debt sub-types. Bedi and Kaur (2022) showed through regression analysis
+of open-source repositories that commit frequency, lines of code, code
+smells, and test coverage are statistically significant predictors of
+debt accumulation, while developer reputation metrics have no
+significant effect, locating technical debt firmly in development
+practices rather than developer quality. Ahmad \emph{et al.} (2026),
+drawing on qualitative interviews with 24 experts across four
+international companies, identified five non-technical dimensions of
+debt accumulation in large-scale agile environments --- social dynamics,
+process, people, documentation, and requirements --- with lack of
+communication and collaboration as the primary drivers.
+
+A more fundamental theoretical challenge comes from Vidoni, Codabux and
+Fard (2022), who leverage game theory to argue that technical debt in
+complex systems cannot be entirely removed and that its effects cannot
+be considered managed even when individual items are repaid. This
+concept of infinite technical debt challenges the implicit assumption
+underlying all repayment-focused frameworks that debt is always
+recoverable given sufficient resources. From an ethical standpoint, this
+is significant: if a system has crossed into infinite debt territory,
+prioritisation frameworks may create the appearance of governance
+without substantive improvement, potentially providing false assurance
+to regulators and senior management while deferring an inevitable
+decommissioning decision.
+
+\subsection{Expanding the Conceptual
+Perimeter}\label{expanding-the-conceptual-perimeter}
+
+The conceptual boundaries of technical debt now extend to every layer of
+the enterprise IT stack. Kleinwaks, Batchelor and Bradley (2023)
+conducted a systematic literature review of technical debt in systems
+engineering and found that requirements, architecture, integration, and
+verification artefacts all accumulate debt, and that software-oriented
+management approaches are poorly adapted to multi-discipline engineering
+lifecycles. Hanssen, Brataas and Martini (2019) identified scalability
+debt as a distinct sub-type triggered by regulatory change,
+demonstrating in an open banking context that sound architectural
+decisions made before the PSD2 directive became sources of debt when new
+scalability requirements were imposed without architectural revision.
+Yang \emph{et al.} (2019) proposed a taxonomy of COTS-related technical
+debt covering seven key types observable during systems acquisition,
+establishing that vendor platform obsolescence is a form of technical
+debt requiring management tools fundamentally different from those
+applied to internally developed code. This expansion is directly
+relevant to the present research: the most consequential debt in
+financial trading IT is platform debt, infrastructure debt, and
+vulnerability debt, none of which is reachable by standard static
+analysis tooling.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Measurement and Prioritisation
+Frameworks}\label{measurement-and-prioritisation-frameworks}
+
+\subsection{The Dominance of Static Analysis and Its
+Limits}\label{the-dominance-of-static-analysis-and-its-limits}
+
+The measurement of technical debt in practice is dominated by static
+code analysis tools including SonarQube, SQALE, and CAST, each
+operationalising debt as a weighted sum of estimated remediation effort
+for rule violations detected by automated scanners (Biazotto \emph{et
+al.}, 2024). Biazotto \emph{et al.} (2024), in a systematic mapping
+study of 178 primary studies, identified 121 automation artefacts for
+technical debt management, found that the majority operate at the code
+level, that most require substantial human intervention even at higher
+automation levels, and that integration across the full technical debt
+management lifecycle remains unsolved. Ampatzoglou \emph{et al.} (2022)
+present SDK4ED as the most comprehensive industry-oriented integration
+of code-level measurement and prevention, reporting a three-year
+evaluation confirming financial value to software organisations, while
+simultaneously confirming that the platform provides limited support for
+infrastructure-level or vendor platform debt. The ethical implication of
+this limitation is non-trivial: tools that measure only what they can
+reach create systematic blind spots, and organisations relying
+exclusively on tool-generated estimates may allocate remediation
+resources to low-risk cosmetic violations while high-risk unsupported
+infrastructure accumulates unobserved.
+
+Amanatidis \emph{et al.} (2020) evaluated the agreement among leading
+technical debt assessment tools across 50 open-source projects and found
+substantial inter-tool divergence: different tools examining the same
+codebase produce materially different debt estimates and identify
+different violation sets, with no single tool consistently dominant. A
+debt estimate produced by a single tool is therefore not a neutral
+measurement but a function of that tool's particular ruleset and
+threshold calibrations. Practitioners who accept tool outputs as
+objective assessments effectively delegate their prioritisation
+judgement to an opaque algorithmic configuration. Albuquerque \emph{et
+al.} (2023), in a systematic mapping study of 150 primary studies on
+intelligent techniques applied to technical debt management, found that
+most approaches operate at automation levels one and two, that
+substantial human intervention remains necessary, and that
+infrastructure debt and process debt remain chronically understudied
+relative to code and architectural debt types.
+
+\subsection{The Prioritisation Gap}\label{the-prioritisation-gap}
+
+Lenarduzzi \emph{et al.} (2021), in the most comprehensive systematic
+review of prioritisation strategies to date covering 44 primary studies,
+found that existing approaches cluster around cost-based, value-based,
+and risk-based strategies; that the vast majority propose a single
+prioritisation dimension; that quantitative methods are far less common
+than qualitative and heuristic approaches; and that empirical validation
+on industrial datasets is rare. The review explicitly concludes that
+technical debt prioritisation research is preliminary, that there is no
+consensus on what the important factors are or how to measure them, and
+that current research cannot be considered conclusive (Lenarduzzi
+\emph{et al.}, 2021). This is the most direct empirical justification in
+the literature for the design contribution pursued in this dissertation.
+
+The divergence between tool-generated priorities and practitioner
+behaviour is well documented. Alfayez \emph{et al.} (2023) conducted a
+study with 89 participants across four companies, finding that the
+overwhelming majority factored in both value and cost when making
+repayment decisions rather than following any single strategy, that the
+value of a debt item was consistently described as subjective and
+context-dependent, and that no single approach addressed all developer
+objectives. Wiese and Borowa (2023) reinforced this from a managerial
+perspective, finding across 16 semi-structured interviews that nearly
+none of the IT managers studied had established a formal technical debt
+management process and that communicating about technical debt across
+technical and business stakeholders was the primary identified
+challenge. (\textbf{stochelBusinessDrivenTechnical2023?}) propose the
+Continuous Debt Valuation Approach, which computes a financial value for
+each debt item as a function of remediation cost, interest rate, and
+business risk exposure, demonstrating through case studies that this
+valuation significantly shifts prioritisation decisions relative to
+effort-only approaches, though CoDVA remains anchored in
+development-level data and does not incorporate service management
+signals.
+
+The ethical dimension of prioritisation deserves explicit
+acknowledgement. Any framework assigning a priority score to a technical
+debt item implicitly encodes value judgements about which systems and
+which risks matter most. In a financial institution, a high priority
+score attached to a trading platform component creates pressure on the
+responsible team, influences investment decisions, and may be used in
+post-incident accountability processes. A framework that does not
+disclose and justify its weighting logic creates the conditions for
+algorithmic accountability gaps, where consequential decisions appear
+technically derived rather than normatively chosen.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Technical Debt in Financial and Regulated Enterprise
+IT}\label{technical-debt-in-financial-and-regulated-enterprise-it}
+
+\subsection{The Financial Services
+Context}\label{the-financial-services-context}
+
+Financial services organisations are characterised by decades of layered
+legacy systems, high regulatory compliance requirements, strict service
+availability obligations, and architectural constraints imposed by
+vendor platforms that cannot be freely refactored (Haki \emph{et al.},
+2023). Haki \emph{et al.} (2023) conducted clinical research at Credit
+Suisse, a global financial services company headquartered in Zurich,
+designing and evaluating a digital nudge for technical debt management
+across more than 3,000 IT applications. The Credit Suisse technical debt
+taxonomy distinguished four operationally significant types: code
+quality debt, infrastructure lifecycle debt (cumulative end-of-life
+months of unsupported components), vulnerability debt (weighted
+vulnerability counts from network scanners), and automation debt (build
+and deployment maturity). This taxonomy independently confirms that a
+major financial institution prioritises infrastructure and vulnerability
+debt over code debt as the most strategically significant liabilities at
+enterprise scale.
+
+The study's results must however be interpreted with care. The
+quantitative evaluation involved three software development teams, of
+which two reduced their debt index within a year while one did not, with
+management intent identified as the decisive variable rather than nudge
+design quality (Haki \emph{et al.}, 2023). This is a thin evidential
+basis for generalisation across a global financial IT landscape. The
+clinical research design, which embedded the researchers as both
+designers and evaluators, also introduces positionality concerns that
+limit independence of the evaluation. These limitations do not
+invalidate the conceptual contribution, but they counsel against
+treating the study as strong causal evidence for any particular
+technical debt management mechanism.
+
+\subsection{Enterprise Systems and the Outsourcing
+Context}\label{enterprise-systems-and-the-outsourcing-context}
+
+(\textbf{ramasubbuTechnicalDebtReliability2015?}) established through
+longitudinal analysis of a commercial enterprise system deployed at 48
+client firms that technical debt decreases system reliability
+non-linearly: modular maintenance targeted at debt reduction was
+approximately 53\% more effective than architectural maintenance in
+reducing client error-driven failures, but simultaneously generated an
+83\% higher probability of vendor error-driven failures. This
+non-linearity is critical for any prioritisation framework:
+interventions that reduce one dimension of operational risk may
+simultaneously increase another, and a framework that treats criteria
+independently without modelling their interactions risks recommending
+actions that are locally optimal but globally harmful. Ramasubbu and
+Kemerer (2021) extended this with 1,824 outsourced remediation projects
+involving 424 client organisations, finding that control balancing
+improved remediation outcomes only when a long-term migration roadmap
+had been identified; without such a roadmap, intensified coordination
+actually reduced remediation performance. This implies that
+prioritisation frameworks must be coupled to strategic roadmaps, not
+deployed as standalone ranking tools.
+
+\subsection{DORA Metrics as Operational Debt
+Proxies}\label{dora-metrics-as-operational-debt-proxies}
+
+Forsgren, Humble and Kim (2018) established the DORA framework across
+more than 2,000 organisations, demonstrating that deployment frequency,
+lead time for changes, mean time to restore service, and change failure
+rate distinguish high-performing delivery organisations from
+low-performing ones. The critical property of the DORA metrics for the
+present research is that they are derived entirely from operational
+service management data rather than code repositories. Forsgren, Humble
+and Kim (2018) demonstrate that accumulated debt in architecture,
+infrastructure, and process manifests in degraded operational throughput
+before it becomes visible in code, positioning service management data
+as a legitimate and sufficient measurement substrate when source code is
+structurally inaccessible. Neil, Häger and Andersen (2009) complement
+this with a hybrid dynamic Bayesian network model validated against
+banking operational loss data, demonstrating that incident frequency and
+severity in financial IT follow identifiable probabilistic patterns
+usable for risk prioritisation without complete knowledge of the
+underlying system state.
+
+The ethical implication of using incident data as a debt proxy requires
+explicit attention. Incident records are generated and owned by
+operations teams without the explicit consent of the development teams
+whose technical decisions contributed to those incidents. Using this
+data as a ranking input creates a governance artefact with
+accountability implications, potentially attributing operational
+failures to specific teams in ways affecting performance evaluations and
+budget allocations. Any framework deploying this approach must establish
+clear data governance principles and disclose how incident data is
+attributed, aggregated, and used in its outputs.
+
+\subsection{Security Debt and Patch
+Management}\label{security-debt-and-patch-management}
+
+Feutrill \emph{et al.} (2018) established that critical vulnerabilities
+with network attack vectors are exploited within a median of
+approximately 30 days of publication, creating a direct empirical link
+between patch currency and operational security risk. Markkanen and
+Frantti (2023) demonstrated through simulation that individualised,
+risk-adjusted patch timelines reduce both security exposure and
+operational disruption relative to uniform patching policies. Yang
+\emph{et al.} (2011) reframed patch prioritisation as a problem of
+maintaining SLA compliance rather than minimising vulnerability counts,
+aligning patch management with the service-level perspective of the
+present framework. Kula \emph{et al.} (2019) demonstrated at ING that
+managing upstream dependency currency is among the most persistent
+challenges in rapid release banking environments, connecting release
+velocity to downstream technical debt accumulation in a way directly
+measurable from service management data.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Multi-Criteria Decision-Making and
+TOPSIS}\label{multi-criteria-decision-making-and-topsis}
+
+\subsection{The Case for Multi-Criteria
+Methods}\label{the-case-for-multi-criteria-methods}
+
+Technical debt prioritisation involves the simultaneous weighing of
+remediation cost, business risk, security exposure, operational impact,
+and regulatory compliance, none of which can be reduced to a single
+scalar without information loss (Lenarduzzi \emph{et al.}, 2021).
+Single-criterion approaches are demonstrably suboptimal because they
+ignore trade-offs that practitioners navigate daily (Alfayez \emph{et
+al.}, 2023). MCDM methods provide a mathematically rigorous aggregation
+framework for incommensurable criteria. Hwang and Yoon (1981) introduced
+TOPSIS, defining the ideal solution as the hypothetical alternative
+scoring best on all criteria simultaneously and ranking alternatives by
+Euclidean proximity to this ideal. Zanakis \emph{et al.} (1998) found
+through simulation that TOPSIS consistently produced rankings among the
+most stable and closest to the Pareto-optimal ordering across diverse
+problem structures, supporting its use in high-uncertainty
+prioritisation environments.
+
+\subsection{TOPSIS: Mechanics, Applications, and Critical
+Limitations}\label{topsis-mechanics-applications-and-critical-limitations}
+
+TOPSIS operates by constructing a normalised weighted decision matrix,
+identifying ideal best and worst values per criterion, computing each
+alternative's Euclidean distance to both reference points, and ranking
+by the closeness coefficient, defined as the ratio of the distance to
+the ideal worst to the sum of both distances (Albarak \emph{et al.},
+2022). The rank reversal problem, formalised by García-Cascales and
+Lamata (2012), in which introducing a new alternative changes the
+ranking of existing alternatives, is resolved by Yang (no date) through
+a modification of the normalisation procedure that defines reference
+points independently of the specific alternative set. This correction is
+practically significant in enterprise portfolios where services enter
+and exit continuously.
+
+Albarak \emph{et al.} (2022) applied TOPSIS combined with portfolio
+theory to database normalisation debt, demonstrating that the TOPSIS
+ordering identified high-priority targets that a pure effort-based
+approach would have indefinitely deferred. Khan and Purohit (2022)
+applied a hybrid PROMETHEE-CRITIC and TOPSIS-CRITIC methodology to web
+service ranking, showing that objective weighting through CRITIC
+combined with TOPSIS produced stable, internally consistent rankings
+while resolving rank reversal. Zytoon (2020) applied Delphi-AHP-TOPSIS
+to safety inspection prioritisation in a regulated industrial
+environment, confirming that TOPSIS generalises to compliance-driven
+risk prioritisation with heterogeneous criteria, structurally analogous
+to the financial IT context of the present research. Ishak and Wanli
+(2020) demonstrated that fuzzy extensions improve robustness when
+criterion weights cannot be specified with cardinal precision, relevant
+to enterprise settings where expert elicitation is the primary weighting
+mechanism.
+
+\subsection{Transferability Critique and Ethical
+Dimensions}\label{transferability-critique-and-ethical-dimensions}
+
+These applications provide precedent but not proof of transferability to
+the present domain. All existing TOPSIS applications to technical debt
+operate on researcher-generated data from controlled development
+artefacts. The present research proposes applying TOPSIS to live service
+management data extracted from operational records including incident
+logs, ITSM change records, and vulnerability scanner outputs, sources
+that carry known quality limitations: incident records are
+inconsistently classified across teams, change failure rates vary with
+recording discipline rather than technical quality alone, and
+vulnerability counts depend on scanner coverage rather than actual
+exposure. Greco \emph{et al.} (2019) establish that the robustness of
+any MCDM-based index is only as strong as its input data quality, and
+that sensitivity analysis across weighting schemes is a necessary
+validation step. The proposed framework must therefore include a
+sensitivity analysis component and explicitly document its data quality
+assumptions.
+
+The ethical dimension of criterion weighting in TOPSIS also requires
+treatment. Weights assigned to criteria in the decision matrix are not
+neutral technical parameters but normative choices about organisational
+values. A framework that weights vulnerability debt more heavily than
+infrastructure lifecycle debt embeds the judgement that security
+exposure matters more than supportability. When used to allocate
+remediation budgets in a regulated financial institution, these
+weighting choices carry legal and governance implications that cannot be
+resolved by mathematical optimisation alone (Greco \emph{et al.}, 2019).
+The proposed framework must specify a transparent, documented, and
+auditable weight elicitation process involving operations, security,
+compliance, and business leadership stakeholders, and must disclose the
+resulting weights and their rationale in all governance outputs
+produced.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Synthesis: Converging Evidence and the Research
+Gap}\label{synthesis-converging-evidence-and-the-research-gap}
+
+\subsection{Cross-Pillar Convergence}\label{cross-pillar-convergence}
+
+Four convergent findings define the theoretical and empirical foundation
+for the proposed framework. First, technical debt has expanded
+conceptually to encompass every layer of the enterprise IT stack, but
+the dominant measurement tools have not followed this expansion,
+creating a structural blind spot in the domains most consequential for
+financial IT (Kruchten, Nord and Ozkaya, 2012; Yang \emph{et al.}, 2019;
+Biazotto \emph{et al.}, 2024). Second, technical debt prioritisation is
+empirically and theoretically established as a multi-criteria problem
+for which no validated quantitative framework currently exists, a gap
+explicitly identified by Lenarduzzi \emph{et al.} (2021). Third, the
+operational consequences of unresolved technical debt are measurable and
+significant: the 84\% incident reduction documented by de Toledo
+\emph{et al.} (2021), the non-linear maintenance cost effects
+established by (\textbf{ramasubbuTechnicalDebtReliability2015?}), and
+the exploitation timing evidence from Feutrill \emph{et al.} (2018)
+collectively confirm that debt translates into quantifiable operational
+harm visible in service management records. Fourth, Forsgren, Humble and
+Kim (2018) demonstrate that DORA metrics derived from operational data
+are valid proxies for technical health when source code is inaccessible,
+providing the methodological bridge between the technical debt
+literature and the service management data available in financial
+trading IT.
+
+\subsection{Cross-Cutting Limitations}\label{cross-cutting-limitations}
+
+Several limitations qualify these conclusions. The empirical base for
+financial IT specifically remains thin: Haki \emph{et al.} (2023) is a
+single-organisation clinical study with a three-team evaluation, and
+Kula \emph{et al.} (2019) addresses release velocity rather than
+systematic debt governance. All TOPSIS applications to technical debt
+operate on researcher-controlled datasets rather than live operational
+records, leaving the data quality challenge unaddressed (Albarak
+\emph{et al.}, 2022). The behavioural literature consistently finds that
+management intent and stakeholder communication are equal or greater
+determinants of remediation outcomes than technical tool quality (Wiese
+and Borowa, 2023; Haki \emph{et al.}, 2023), a finding that no
+prioritisation algorithm can address but any governance framework must
+acknowledge. The ethical dimensions of operational data use, criterion
+weighting, and accountability attribution have received no systematic
+treatment in the technical debt literature, a gap the present research
+explicitly addresses.
+
+\subsection{Statement of the Research
+Gap}\label{statement-of-the-research-gap}
+
+No existing framework combines service-level operational metrics,
+multi-criteria prioritisation, and financial services domain constraints
+into an integrated, auditable technical debt ranking instrument.
+Code-centric tools are structurally inapplicable to vendor platform
+environments. Single-criterion prioritisation models contradict both the
+empirical evidence on practitioner behaviour and the theoretical
+requirements of a multi-objective problem. Governance-oriented
+qualitative frameworks do not produce the quantitative, repeatable, and
+auditable outputs required by risk and compliance functions in regulated
+institutions. TOPSIS has not been applied to service-level enterprise
+technical debt data, and the financial trading IT domain is absent from
+the empirical technical debt literature despite being among the
+highest-consequence environments for the risks that unmanaged technical
+debt creates.
+
+\subsection{Transition to Research
+Questions}\label{transition-to-research-questions}
+
+This gap motivates the two research questions pursued in this
+dissertation. The first asks which operational service management
+metrics can serve as valid proxies for technical debt severity in
+enterprise trading IT systems where source code analysis is not
+feasible, and how these metrics can be incorporated into a replicable
+and auditable multi-criteria framework. The second asks whether a
+TOPSIS-based ranking of these service-level metrics produces
+prioritisation outputs more aligned with actual operational risk
+exposure than current practitioner heuristics, and whether that
+alignment is sufficient to constitute a defensible governance instrument
+for a regulated financial institution. Together, these questions
+position the proposed framework at the convergence of all four reviewed
+pillars and establish the theoretical, empirical, methodological, and
+ethical justification for the design science artefact developed in the
+subsequent chapters.
+
+\bookmarksetup{startatroot}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{1}
+\bibitem[\citeproctext]{ref-ahmadTechnicalDebtNot2026}
+Ahmad, M.O., Mandić, V., Taušan, N., Katin, A. and Herath, P. (2026)
+\textquotesingle Technical debt is not just technical: {An} industrial
+case study in large agile software development\textquotesingle,
+\emph{Journal of Systems and Software}, 234, p. 112719. Available at:
+\url{https://doi.org/10.1016/j.jss.2025.112719}.
+
+\bibitem[\citeproctext]{ref-albarakManagingTechnicalDebt2022}
+Albarak, M., Bahsoon, R., Ozkaya, I. and Nord, R. (2022)
+\textquotesingle Managing {Technical Debt} in {Database
+Normalization}\textquotesingle, \emph{IEEE Transactions on Software
+Engineering}, 48(3), pp. 755--772. Available at:
+\url{https://doi.org/10.1109/TSE.2020.3001339}.
+
+\bibitem[\citeproctext]{ref-albuquerqueManagingTechnicalDebt2023}
+Albuquerque, D., Guimarães, E., Tonin, G., Rodríguezs, P., Perkusich,
+M., Almeida, H., Perkusich, A. and Chagas, F. (2023)
+\textquotesingle Managing {Technical Debt Using Intelligent Techniques}
+- {A Systematic Mapping Study}\textquotesingle, \emph{IEEE Transactions
+on Software Engineering}, 49(4), pp. 2202--2220. Available at:
+\url{https://doi.org/10.1109/TSE.2022.3214764}.
+
+\bibitem[\citeproctext]{ref-alfayezHowSonarQubeidentifiedTechnical2023}
+Alfayez, R., Winn, R., Alwehaibi, W., Venson, E. and Boehm, B. (2023)
+\textquotesingle How {SonarQube-identified} technical debt is
+prioritized: {An} exploratory case study\textquotesingle,
+\emph{Information and Software Technology}, 156, p. 107147. Available
+at: \url{https://doi.org/10.1016/j.infsof.2023.107147}.
+
+\bibitem[\citeproctext]{ref-amanatidisEvaluatingAgreementTechnical2020}
+Amanatidis, T., Mittas, N., Moschou, A., Chatzigeorgiou, A.,
+Ampatzoglou, A. and Angelis, L. (2020) \textquotesingle Evaluating the
+agreement among technical debt measurement tools: Building an empirical
+benchmark of technical debt liabilities\textquotesingle, \emph{Empirical
+Software Engineering}, 25(5), pp. 4161--4204. Available at:
+\url{https://doi.org/10.1007/s10664-020-09869-w}.
+
+\bibitem[\citeproctext]{ref-ampatzoglouSDK4EDPlatformTechnical2022}
+Ampatzoglou, A., Chatzigeorgiou, A., Arvanitou, E.M. and Bibi, S. (2022)
+\textquotesingle{}{SDK4ED}: {A} platform for technical debt
+management\textquotesingle, \emph{Software: Practice and Experience},
+52(8), pp. 1879--1902. Available at:
+\url{https://doi.org/10.1002/spe.3093}.
+
+\bibitem[\citeproctext]{ref-avgeriouTechnicalDebtManagement2024}
+Avgeriou, P., Ozkaya, I., Chatzigeorgiou, A., Ciolkowski, M., Ernst,
+N.A., Koontz, R.J., Poort, E. and Shull, F. (2024)
+\textquotesingle Technical {Debt Management}: {The Road Ahead} for
+{Successful Software Delivery}\textquotesingle, \emph{arXiv.org}
+{[}Preprint{]}. Available at:
+\url{https://doi.org/10.1109/ICSE-FoSE59343.2023.00007}.
+
+\bibitem[\citeproctext]{ref-bediUnderstandingFactorsAffecting2022}
+Bedi, J. and Kaur, K. (2022) \textquotesingle Understanding factors
+affecting technical debt\textquotesingle, \emph{International Journal of
+Information Technology}, 14(2), pp. 1051--1060. Available at:
+\url{https://doi.org/10.1007/s41870-020-00487-9}.
+
+\bibitem[\citeproctext]{ref-beskerTechnicalDebtEmpirical}
+Besker, T. (2020) \emph{Technical {Debt}: {An} empirical investigation
+of its harmfulness and on management strategies in industry}. PhD
+thesis. Chalmers University of Technology.
+
+\bibitem[\citeproctext]{ref-biazottoTechnicalDebtManagement2024}
+Biazotto, J.P., Feitosa, D., Avgeriou, P. and Nakagawa, E.Y. (2024)
+\textquotesingle Technical debt management automation: {State} of the
+art and future perspectives\textquotesingle, \emph{Information and
+Software Technology}, 167, p. 107375. Available at:
+\url{https://doi.org/10.1016/j.infsof.2023.107375}.
+
+\bibitem[\citeproctext]{ref-cunninghamWyCashPortfolioManagement1993}
+Cunningham, W. (1993) \textquotesingle The {WyCash} portfolio management
+system\textquotesingle, \emph{ACM SIGPLAN OOPS Messenger}, 4(2), pp.
+29--30. Available at: \url{https://doi.org/10.1145/157710.157715}.
+
+\bibitem[\citeproctext]{ref-detoledoReducingIncidentsMicroservices2021}
+de Toledo, S.S., Martini, A., Sjøberg, D.I.K., Przybyszewska, A. and
+Frandsen, J.S. (2021) \textquotesingle Reducing {Incidents} in
+{Microservices} by {Repaying Architectural Technical
+Debt}\textquotesingle, \emph{2021 47th {Euromicro Conference} on
+{Software Engineering} and {Advanced Applications} ({SEAA})}, pp.
+196--205. Available at:
+\url{https://doi.org/10.1109/SEAA53835.2021.00033}.
+
+\bibitem[\citeproctext]{ref-feutrillEffectCommonVulnerability2018}
+Feutrill, A., Ranathunga, D., Yarom, Y. and Roughan, M. (2018)
+\textquotesingle The {Effect} of {Common Vulnerability Scoring System
+Metrics} on {Vulnerability Exploit Delay}\textquotesingle, \emph{2018
+{Sixth International Symposium} on {Computing} and {Networking}
+({CANDAR})}, pp. 1--10. Available at:
+\url{https://doi.org/10.1109/CANDAR.2018.00009}.
+
+\bibitem[\citeproctext]{ref-forsgrenAccelerate2018}
+Forsgren, N., Humble, J. and Kim, G. (2018) \emph{Accelerate: {The
+Science} of {Lean Software} and {DevOps}: {Building} and {Scaling High
+Performing Technology Organizations}}. Portland, OR: IT Revolution
+Press.
+
+\bibitem[\citeproctext]{ref-garcia-cascalesRankReversalTOPSIS2012}
+García-Cascales, M.S. and Lamata, M.T. (2012) \textquotesingle On rank
+reversal and {TOPSIS} method\textquotesingle, \emph{Mathematical and
+Computer Modelling}, 56(5), pp. 123--132. Available at:
+\url{https://doi.org/10.1016/j.mcm.2011.12.022}.
+
+\bibitem[\citeproctext]{ref-grecoMethodologicalFrameworkComposite2019}
+Greco, S., Ishizaka, A., Tasiou, M. and Torrisi, G. (2019)
+\textquotesingle On the {Methodological Framework} of {Composite
+Indices}: {A Review} of the {Issues} of {Weighting}, {Aggregation}, and
+{Robustness}\textquotesingle, \emph{Social Indicators Research}, 141(1),
+pp. 61--94. Available at:
+\url{https://doi.org/10.1007/s11205-017-1832-9}.
+
+\bibitem[\citeproctext]{ref-hakiDigitalNudgingTechnical2023}
+Haki, K., Rieder, A., Buchmann, L. and W.Schneider, A. (2023)
+\textquotesingle Digital nudging for technical debt management at
+{Credit Suisse}\textquotesingle, \emph{European Journal of Information
+Systems}, 32(1), pp. 64--80. Available at:
+\url{https://doi.org/10.1080/0960085X.2022.2088413}.
+
+\bibitem[\citeproctext]{ref-hanssenIdentifyingScalabilityDebt2019}
+Hanssen, G.K., Brataas, G. and Martini, A. (2019)
+\textquotesingle Identifying {Scalability Debt} in {Open
+Systems}\textquotesingle, \emph{2019 {IEEE}/{ACM International
+Conference} on {Technical Debt} ({TechDebt})}, pp. 48--52. Available at:
+\url{https://doi.org/10.1109/TechDebt.2019.00014}.
+
+\bibitem[\citeproctext]{ref-hevnerDesignScienceInformation2004}
+Hevner, A.R., March, S.T., Park, J. and Ram, S. (2004)
+\textquotesingle Design {Science} in {Information Systems
+Research}\textquotesingle, \emph{MIS Quarterly}, 28(1), pp. 75--105.
+Available at: \url{https://doi.org/10.2307/25148625}.
+
+\bibitem[\citeproctext]{ref-hwangMultipleAttributeDecision1981}
+Hwang, C.-L. and Yoon, K. (1981) \emph{Multiple {Attribute Decision
+Making}}. Edited by M. Beckmann and H.P. Künzi. Berlin, Heidelberg:
+Springer (Lecture {Notes} in {Economics} and {Mathematical Systems}).
+Available at: \url{https://doi.org/10.1007/978-3-642-48318-9}.
+
+\bibitem[\citeproctext]{ref-ishakAnalysisFuzzyAHPTOPSIS2020}
+Ishak, A. and Wanli (2020) \textquotesingle Analysis of {Fuzzy
+AHP-TOPSIS Methods} in {Multi Criteria Decision Making}: {Literature
+Review}\textquotesingle, \emph{IOP Conference Series: Materials Science
+and Engineering}, 1003(1), p. 012147. Available at:
+\url{https://doi.org/10.1088/1757-899X/1003/1/012147}.
+
+\bibitem[\citeproctext]{ref-khanIntegratedMethodologyRanking2022}
+Khan, S. and Purohit, L. (2022) \textquotesingle An {Integrated
+Methodology} of {Ranking Based} on {PROMETHEE-CRITIC} and {TOPSIS-CRITIC
+In Web Service Domain}\textquotesingle, \emph{2022 {IEEE} 11th
+{International Conference} on {Communication Systems} and {Network
+Technologies} ({CSNT})}, pp. 335--340. Available at:
+\url{https://doi.org/10.1109/CSNT54456.2022.9787620}.
+
+\bibitem[\citeproctext]{ref-kleinwaksTechnicalDebtSystems2023}
+Kleinwaks, H., Batchelor, A. and Bradley, T.H. (2023)
+\textquotesingle Technical debt in systems engineering---{A} systematic
+literature review\textquotesingle, \emph{Systems Engineering}, 26(5),
+pp. 675--687. Available at: \url{https://doi.org/10.1002/sys.21681}.
+
+\bibitem[\citeproctext]{ref-kruchtenTechnicalDebtMetaphor2012}
+Kruchten, P., Nord, R.L. and Ozkaya, I. (2012)
+\textquotesingle Technical {Debt}: {From Metaphor} to {Theory} and
+{Practice}\textquotesingle, \emph{IEEE Software}, 29(6), pp. 18--21.
+Available at: \url{https://doi.org/10.1109/MS.2012.167}.
+
+\bibitem[\citeproctext]{ref-kulaReleasingFastSlow2019}
+Kula, E., Rastogi, A., Huijgens, H., Deursen, A. van and Gousios, G.
+(2019) \textquotesingle Releasing fast and slow: An exploratory case
+study at {ING}\textquotesingle, \emph{Proceedings of the 2019 27th {ACM
+Joint Meeting} on {European Software Engineering Conference} and
+{Symposium} on the {Foundations} of {Software Engineering}}. New York,
+NY, USA: Association for Computing Machinery ({ESEC}/{FSE} 2019), pp.
+785--795. Available at: \url{https://doi.org/10.1145/3338906.3338978}.
+
+\bibitem[\citeproctext]{ref-lenarduzziSystematicLiteratureReview2021}
+Lenarduzzi, V., Besker, T., Taibi, D., Martini, A. and Arcelli Fontana,
+F. (2021) \textquotesingle A systematic literature review on {Technical
+Debt} prioritization: {Strategies}, processes, factors, and
+tools\textquotesingle, \emph{Journal of Systems and Software}, 171, p.
+110827. Available at: \url{https://doi.org/10.1016/j.jss.2020.110827}.
+
+\bibitem[\citeproctext]{ref-markkanenPatchManagementPlanning2023}
+Markkanen, V. and Frantti, T. (2023) \textquotesingle Patch management
+planning - towards one-to-one policy\textquotesingle, \emph{2023 10th
+{International Conference} on {Dependable Systems} and {Their
+Applications} ({DSA})}, pp. 60--69. Available at:
+\url{https://doi.org/10.1109/DSA59317.2023.00018}.
+
+\bibitem[\citeproctext]{ref-neilModelingOperationalRisk2009}
+Neil, M., Häger, D. and Andersen, L. (2009) \textquotesingle Modeling
+operational risk in financial institutions using hybrid dynamic
+{Bayesian} networks\textquotesingle, \emph{The Journal of Operational
+Risk}, 4(1), pp. 3--33. Available at:
+\url{https://doi.org/10.21314/JOP.2009.057}.
+
+\bibitem[\citeproctext]{ref-ramasubbuControllingTechnicalDebt2021}
+Ramasubbu, N. and Kemerer, C.F. (2021) \textquotesingle Controlling
+{Technical Debt Remediation} in {Outsourced Enterprise Systems
+Maintenance}: {An Empirical Analysis}\textquotesingle, \emph{Journal of
+Management Information Systems}, 38(1), pp. 4--28. Available at:
+\url{https://doi.org/10.1080/07421222.2021.1870377}.
+
+\bibitem[\citeproctext]{ref-vidoniInfiniteTechnicalDebt2022}
+Vidoni, M., Codabux, Z. and Fard, F.H. (2022) \textquotesingle Infinite
+technical debt\textquotesingle, \emph{Journal of Systems and Software},
+190, p. 111336. Available at:
+\url{https://doi.org/10.1016/j.jss.2022.111336}.
+
+\bibitem[\citeproctext]{ref-wieseITManagersPerspective2023a}
+Wiese, M. and Borowa, K. (2023) \textquotesingle{}{IT Managers}'
+{Perspective} on {Technical Debt Management}\textquotesingle. Rochester,
+NY: Social Science Research Network. Available at:
+\url{https://doi.org/10.2139/ssrn.4418188}.
+
+\bibitem[\citeproctext]{ref-yangSLAdrivenApplicabilityAnalysis2011}
+Yang, B., Ayachitula, N., Zeng, S. and Puri, R. (2011)
+\textquotesingle{}{SLA-driven} applicability analysis for patch
+management\textquotesingle, \emph{12th {IFIP}/{IEEE International
+Symposium} on {Integrated Network Management} ({IM} 2011) and
+{Workshops}}, pp. 438--445. Available at:
+\url{https://doi.org/10.1109/INM.2011.5990544}.
+
+\bibitem[\citeproctext]{ref-yangIngeniousSolutionRank}
+Yang, W. (no date) \textquotesingle Ingenious {Solution} for the {Rank
+Reversal Problem} of {TOPSIS Method}\textquotesingle. Available at:
+\url{https://doi.org/10.1155/2020/9676518}.
+
+\bibitem[\citeproctext]{ref-yangTaxonomyTechnicalDebt2019}
+Yang, Y., Michel, R., Wade, J., Verma, D., Törngren, M. and Alelyani, T.
+(2019) \textquotesingle Towards a taxonomy of technical debt for
+{COTS-intensive} cyber physical systems\textquotesingle, \emph{Procedia
+Computer Science}, 153, pp. 108--117. Available at:
+\url{https://doi.org/10.1016/j.procs.2019.05.061}.
+
+\bibitem[\citeproctext]{ref-zanakisMultiattributeDecisionMaking1998}
+Zanakis, S.H., Solomon, A., Wishart, N. and Dublish, S. (1998)
+\textquotesingle Multi-attribute decision making: {A} simulation
+comparison of select methods\textquotesingle, \emph{European Journal of
+Operational Research}, 107(3), pp. 507--529. Available at:
+\url{https://doi.org/10.1016/S0377-2217(97)00147-1}.
+
+\bibitem[\citeproctext]{ref-zytoonDecisionSupportModel2020}
+Zytoon, M.A. (2020) \textquotesingle A {Decision Support Model} for
+{Prioritization} of {Regulated Safety Inspections Using Integrated
+Delphi}, {AHP} and {Double-Hierarchical TOPSIS
+Approach}\textquotesingle, \emph{IEEE Access}, 8, pp. 83444--83464.
+Available at: \url{https://doi.org/10.1109/ACCESS.2020.2991179}.
+
+\end{CSLReferences}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{part}{Appendices}
+\appendix
+
+\chapter{Appendix A}\label{appendix-a}
+
+Lorem ipsum
+
+
+
+
+\end{document}
