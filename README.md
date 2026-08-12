@@ -139,4 +139,5 @@ You can find all my work for this module in this folder: [Module 7](https://gith
 * Units 7-30: Dissertation
   * [Dissertation](https://github.com/TobiZeier/MScProject/blob/main/MScProject/Measuring-Technical-Debt-in-Mission-Critical-Trading-Systems.pdf)
   * [Presentation](https://github.com/TobiZeier/MScProject/blob/main/presentation/Measuring-TD-in-Trading-Systems-Thesis-Defence.pdf)
+
 You can find all my work for this module in this folder: [Module 8](https://github.com/TobiZeier/UoEO_MSc_EIM/blob/main/Module8_MSc_Computing_Project)
